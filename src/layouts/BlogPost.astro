@@ -1,0 +1,116 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import Header from "../components/Header.astro";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, excerpt, date, hero_image, tags = [], draft } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={excerpt} image={hero_image} />
+    <style>
+      main {
+        width: calc(100% - 2em);
+        max-width: 100%;
+        margin: 0;
+      }
+      .hero-image {
+        width: 100%;
+      }
+      .hero-image img {
+        display: block;
+        margin: 0 auto;
+        max-width: 1020px;
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: var(--box-shadow);
+      }
+      .prose {
+        width: 720px;
+        max-width: calc(100% - 2em);
+        margin: auto;
+        padding: 1em;
+        color: rgb(var(--gray-dark));
+      }
+      .title {
+        margin-bottom: 1em;
+        padding: 1em 0;
+        text-align: center;
+        line-height: 1.1;
+      }
+      .title h1 {
+        margin: 0 0 0.5em 0;
+      }
+      .date {
+        margin-bottom: 0.5em;
+        color: rgb(var(--gray));
+      }
+      .tags {
+        margin: 0.5em 0 0 0;
+        font-size: 0.85em;
+        color: rgb(var(--gray));
+      }
+      .tags a {
+        color: rgb(var(--gray));
+        text-decoration: none;
+        margin-right: 0.5em;
+      }
+      .tags a:hover {
+        color: var(--accent);
+      }
+      .draft-banner {
+        background: #fff7e0;
+        border: 1px solid #f0c060;
+        color: #6b4400;
+        padding: 0.5em 1em;
+        border-radius: 6px;
+        font-size: 0.85em;
+        margin: 0 auto 1em;
+        max-width: 720px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <article>
+        {hero_image && (
+          <div class="hero-image">
+            <img src={hero_image} alt="" />
+          </div>
+        )}
+        <div class="prose">
+          {draft && (
+            <p class="draft-banner">
+              Draft — not yet finished. Visible because you have the link, but not listed in /blog.
+            </p>
+          )}
+          <div class="title">
+            <div class="date">
+              <FormattedDate date={date} />
+            </div>
+            <h1>{title}</h1>
+            {tags.length > 0 && (
+              <p class="tags">
+                {tags.map((tag) => (
+                  <a href={`/blog/tag/${encodeURIComponent(tag.toLowerCase())}/`}>#{tag}</a>
+                ))}
+              </p>
+            )}
+            <hr />
+          </div>
+          <slot />
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>

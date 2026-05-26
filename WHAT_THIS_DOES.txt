@@ -1,0 +1,41 @@
+WHAT THIS DOES
+==============
+
+Plain-language summary
+----------------------
+- This is the source code for the website at tomdehnel.com.
+- It's a static website — every page is generated ahead of time so it loads fast and has nothing to break in production.
+- I can write new blog posts or edit pages from any device, including my phone, by going to /admin on the live site and logging in with GitHub.
+- When I save in /admin, my change gets committed to GitHub, and the site rebuilds and republishes automatically — usually within a minute or two.
+- The site lives on Cloudflare Pages. The previous WordPress site on HostGator is being retired.
+
+Technical description
+---------------------
+Inputs
+- Markdown files with YAML frontmatter under `src/content/blog/` (posts) and `src/content/pages/` (pages).
+- Images under `public/images/` (per-post subdirectories).
+- Configuration in `astro.config.mjs`, `src/content.config.ts`, and `src/consts.ts`.
+- Decap CMS config in `public/admin/config.yml` (defines collection schemas for the web UI).
+- Generated redirect map in `astro-redirects.generated.json` and `public/_redirects`.
+
+Processing / transformations
+- Astro 6 builds the site statically (`npm run build`):
+  1. `npm run prebuild` regenerates `public/_redirects` from the JSON map so Cloudflare Pages can serve real 301s.
+  2. `astro build` reads each Markdown collection entry through the typed Zod schema in `src/content.config.ts`, renders it into a route (`src/pages/blog/[slug].astro`, `src/pages/[slug].astro`, etc.), and writes everything to `dist/`.
+- Tailwind CSS v4 is wired through the Vite plugin for utility classes; base typography comes from a small Bear-Blog-derived stylesheet in `src/styles/global.css`.
+- `scripts/migrate.mjs` converts a WordPress WXR export into Markdown + downloaded images (one-shot).
+- `scripts/optimize-images.mjs` resizes and recompresses everything under `public/images/` in place.
+- `functions/api/auth.ts` and `functions/api/callback.ts` are Cloudflare Pages Functions that proxy the GitHub OAuth handshake for Decap CMS.
+
+Outputs
+- `dist/` — static site (HTML, CSS, JS, images, RSS, sitemap, `_redirects`, `admin/`).
+- Deployed to Cloudflare Pages on each push to `main`.
+- Sitemap at `/sitemap-index.xml`; RSS at `/rss.xml`; CMS UI at `/admin/`.
+
+Dependencies
+- Astro 6 + `@astrojs/mdx`, `@astrojs/rss`, `@astrojs/sitemap` + `sharp` (image optimization).
+- Tailwind CSS v4 via `@tailwindcss/vite`.
+- Decap CMS v3 (loaded from the unpkg CDN by `public/admin/index.html`).
+- Cloudflare Pages (hosting + Functions runtime).
+- GitHub OAuth app (provides identity for /admin logins).
+- Devtools-only: `fast-xml-parser`, `turndown`, `turndown-plugin-gfm` for the WXR migration script.

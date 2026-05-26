@@ -1,0 +1,52 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+
+type Props = CollectionEntry<"pages">["data"];
+
+const { title, hero_image } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} image={hero_image} />
+    <style>
+      main {
+        width: 720px;
+        max-width: calc(100% - 2em);
+        margin: auto;
+        padding: 1em;
+        color: rgb(var(--gray-dark));
+      }
+      .hero-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        margin: 0 0 2em 0;
+      }
+      .title {
+        margin-bottom: 1.5em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      {hero_image && (
+        <div class="hero-image">
+          <img src={hero_image} alt="" />
+        </div>
+      )}
+      <article>
+        <div class="title">
+          <h1>{title}</h1>
+        </div>
+        <slot />
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,57 @@
+---
+// Import the global stylesheet here so every page gets it via <BaseHead />.
+import "../styles/global.css";
+import { Font } from "astro:assets";
+import { SITE_TITLE } from "../consts";
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Optional OG/Twitter card image. Either a public path (e.g. "/images/posts/foo/hero.jpg") or an absolute URL. */
+  image?: string;
+}
+
+const { title, description, image } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = image ? new URL(image, Astro.site).toString() : undefined;
+const safeDescription = description ?? "";
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="sitemap" href="/sitemap-index.xml" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title={SITE_TITLE}
+  href={new URL("rss.xml", Astro.site)}
+/>
+<meta name="generator" content={Astro.generator} />
+
+<Font cssVariable="--font-atkinson" preload />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+{safeDescription && <meta name="description" content={safeDescription} />}
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="article" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+{safeDescription && <meta property="og:description" content={safeDescription} />}
+{ogImageURL && <meta property="og:image" content={ogImageURL} />}
+
+<!-- Twitter -->
+<meta property="twitter:card" content={ogImageURL ? "summary_large_image" : "summary"} />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={title} />
+{safeDescription && <meta property="twitter:description" content={safeDescription} />}
+{ogImageURL && <meta property="twitter:image" content={ogImageURL} />}
