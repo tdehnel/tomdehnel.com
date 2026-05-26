@@ -1,0 +1,74 @@
+# Decap CMS configuration.
+#
+# Auth flow: Decap → /api/auth → GitHub OAuth → /api/callback → token postMessage.
+# OAuth proxy is implemented in functions/api/{auth,callback}.ts (Cloudflare Pages Functions).
+#
+# Edit this file in the repo. Decap loads it from /admin/config.yml at runtime.
+
+backend:
+  name: github
+  repo: tomdehnel/tomdehnel.com
+  branch: main
+  base_url: https://tomdehnel.com
+  auth_endpoint: /api/auth
+
+# Save in one step. Switch to `editorial_workflow` if/when you want a draft → review → publish flow.
+publish_mode: simple
+
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+# Show a preview link in the editor (preview deployment URL — set this once it's known).
+# site_url: https://tomdehnel.com
+# display_url: https://tomdehnel.com
+
+collections:
+  - name: pages
+    label: Pages
+    label_singular: Page
+    folder: src/content/pages
+    create: true
+    delete: true
+    format: frontmatter
+    extension: md
+    slug: "{{slug}}"
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: slug, label: URL slug, widget: string, required: false, hint: "Leave blank to derive from the filename." }
+      - { name: hero_image, label: Hero image, widget: image, required: false, choose_url: false }
+      - { name: body, label: Body, widget: markdown }
+
+  - name: posts
+    label: Blog posts
+    label_singular: Blog post
+    folder: src/content/blog
+    create: true
+    delete: true
+    format: frontmatter
+    extension: md
+    slug: "{{slug}}"
+    sortable_fields: [date, title]
+    view_filters:
+      - label: Drafts
+        field: draft
+        pattern: true
+      - label: Published
+        field: draft
+        pattern: false
+    fields:
+      - { name: title, label: Title, widget: string }
+      - {
+          name: date,
+          label: Date,
+          widget: datetime,
+          date_format: "YYYY-MM-DD",
+          time_format: false,
+          picker_utc: false,
+          default: ""
+        }
+      - { name: slug, label: URL slug, widget: string, required: false, hint: "Used for /blog/<slug>/. Defaults to the filename." }
+      - { name: tags, label: Tags, widget: list, required: false, default: [] }
+      - { name: excerpt, label: Excerpt, widget: text, required: false, hint: "1–2 sentences used for previews + meta description." }
+      - { name: hero_image, label: Hero image, widget: image, required: false, choose_url: false }
+      - { name: draft, label: Draft, widget: boolean, default: true, hint: "Drafts are hidden from /blog and the RSS feed. Untick to publish." }
+      - { name: body, label: Body, widget: markdown }
