@@ -19,7 +19,7 @@ In this essay, I'll share some arguments for why capitalism is the best availabl
 
 ### **Prevalence of the Phrase _Late-Stage Capitalism_ in Literature, 1945-2019**
 
-<figure class="wp-block-image aligncenter size-large"><img src="/images/posts/crushing-the-myth-of-late-stage-capitalism/image-4-1024x390.png" alt="" class="wp-image-769"></figure>
+<figure class="wp-block-image aligncenter size-large"><img loading="lazy" decoding="async" src="/images/posts/crushing-the-myth-of-late-stage-capitalism/image-4-1024x390.png" alt="" class="wp-image-769"></figure>
 
 If you haven’t been paying attention, it may seem like this is a relatively new phrase, promoting a new theory. But its roots go back to the 1880s, when Marxist economist [Werner Sombart](https://en.wikipedia.org/wiki/Werner_Sombart) coined the phrase _late capitalism_, eagerly referring to Karl Marx’s theory that the materialistic excesses of bourgeois capitalism would lead to social revolution.
 
@@ -27,7 +27,7 @@ Late capitalism as a concept must have been irresistible to the budding Marxists
 
 ### **Late-Stage Capitalism Originated as _Late Capitalism_ in Marxist Literature in the 1880s**
 
-<figure class="wp-block-image aligncenter size-large"><img src="/images/posts/crushing-the-myth-of-late-stage-capitalism/image-1-1024x413.png" alt="" class="wp-image-766"></figure>
+<figure class="wp-block-image aligncenter size-large"><img loading="lazy" decoding="async" src="/images/posts/crushing-the-myth-of-late-stage-capitalism/image-1-1024x413.png" alt="" class="wp-image-766"></figure>
 
 I’ll be charitable and assume that most contemporary people who use the phrase late-stage capitalism are doing so naively, making a logical leap that capitalism's problems are equivalent to symptoms of its inevitable decline. Or they are simply denigrating capitalism as a way to signal their supposed intellectualism.
 
@@ -177,13 +177,13 @@ The case of inheritances is more problematic for people to accept because someon
 
 But we should nevertheless accept generational wealth, because telling people how to allocate resources to their own family is morally wrong. So long as people are legally and socially responsible for their family members, they should get the most say in how to care for them. And the effect of inheritances appears to be vastly overstated anyhow. [A 2018 study](https://www.ramseysolutions.com/retirement/the-national-study-of-millionaires-research) found that only 21% of millionaires inherited any money at all. And [another in 2019](https://www.cnbc.com/2019/09/26/majority-of-the-worlds-richest-people-are-self-made-says-new-report.html) found that only 24% received an inheritance.
 
-<figure class="wp-block-image aligncenter size-large"><img src="/images/posts/crushing-the-myth-of-late-stage-capitalism/image-2-1024x652.png" alt="" class="wp-image-767"></figure>
+<figure class="wp-block-image aligncenter size-large"><img loading="lazy" decoding="async" src="/images/posts/crushing-the-myth-of-late-stage-capitalism/image-2-1024x652.png" alt="" class="wp-image-767"></figure>
 
 Those who believe wealthy people get their wealth by taking it from someone else do not realize that the world is not a zero-sum game. One person gaining wealth does not mean another person has lost it. [Global wealth has increased significantly](https://ourworldindata.org/grapher/world-gdp-over-the-last-two-millennia) over time, leading to many [escaping poverty](https://ourworldindata.org/grapher/share-of-population-living-in-extreme-poverty-historical?country=~OWID_WRL).
 
 How could total wealth have grown if wealthy people took their wealth from others? It couldn’t have. Wealth is not ill-gotten by default; it is almost always created by someone bringing a product or service to market that others find valuable enough to pay for.
 
-<figure class="wp-block-image size-large"><img src="/images/posts/crushing-the-myth-of-late-stage-capitalism/image-3-1024x682.png" alt="" class="wp-image-768"></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" src="/images/posts/crushing-the-myth-of-late-stage-capitalism/image-3-1024x682.png" alt="" class="wp-image-768"></figure>
 
 [](https://ourworldindata.org/extreme-poverty-in-brief)
 
@@ -197,7 +197,7 @@ Alternate economic systems would require the person’s idea to be approved by a
 
 I probably care more about the poor, and humanity in general than most people. This is partially, because I have myself been very poor. After making a few terrible life choices, I spent about two years living in poverty, frequently without enough money to buy food. Only [10% of Americans](https://www.ers.usda.gov/data-products/ag-and-food-statistics-charting-the-essentials/food-security-and-nutrition-assistance/) are in that situation, but I can commiserate with them. Having to steal your groceries so you can eat something before bed is not a situation I would wish on anyone else.
 
-<figure class="wp-block-image alignright size-full"><img src="/images/posts/crushing-the-myth-of-late-stage-capitalism/image.png" alt="" class="wp-image-765"><figcaption class="wp-element-caption">In reality, stealing because you’re hungry doesn’t come with a musical number.</figcaption></figure>
+<figure class="wp-block-image alignright size-full"><img loading="lazy" decoding="async" src="/images/posts/crushing-the-myth-of-late-stage-capitalism/image.png" alt="" class="wp-image-765"><figcaption class="wp-element-caption">In reality, stealing because you’re hungry doesn’t come with a musical number.</figcaption></figure>
 
 We will face massive problems in the future. These may include a lack of education, disease, and food and energy insecurity. The poor will bear the brunt of these issues, and our goal as a society should be to get as many people out of extreme poverty as possible by continuing the trend of the last 200 years under capitalism. 
 

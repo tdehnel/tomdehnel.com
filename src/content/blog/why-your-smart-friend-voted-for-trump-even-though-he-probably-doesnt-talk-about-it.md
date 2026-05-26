@@ -11,7 +11,7 @@ original_url: "https://tomdehnel.com/?p=1126"
 
 The following article is a good-faith exploration of the "Reluctant Trump Voter" (the person who sees themself in the **yellow circle** of Tim Urban's excellent diagram belwow. I wrote this article not to "steelman" the President or ignore his flaws, but to examine the logic of the "Anyone But the Current Democrats" classic liberal. These voters are not MAGA; they are often deeply uncomfortable with Trump’s rhetoric but have concluded that the alternative represents a threat to American progress that is more subtle, but ultimately more harmful than Trump's approach.
 
-<figure class="wp-block-image aligncenter size-large"><img src="/images/posts/why-your-smart-friend-voted-for-trump-even-though-he-probably-doesnt-talk-about-it/image-1024x951.png" alt="" class="wp-image-1129"></figure>
+<figure class="wp-block-image aligncenter size-large"><img loading="lazy" decoding="async" src="/images/posts/why-your-smart-friend-voted-for-trump-even-though-he-probably-doesnt-talk-about-it/image-1024x951.png" alt="" class="wp-image-1129"></figure>
 
 ## The Hero We Needed: A Good Faith Interpretation of the Trump Era
 

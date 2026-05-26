@@ -27,7 +27,7 @@ I’d like to propose an alternative. What if you thought about the interview pr
 
 It could go something like this: You and some companies are going to interview each other to see if you have business goals that line up. If that happens, and you can agree on a price that works, you can make a fair deal.
 
-<figure class="aligncenter size-large is-resized"><img src="/images/posts/39-ways-companies-stack-the-deck-against-you-in-the-job-interview-process/tomdehnel_support2EDIT-1024x783.png" alt="" class="wp-image-534" width="512" height="392"></figure>
+<figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="/images/posts/39-ways-companies-stack-the-deck-against-you-in-the-job-interview-process/tomdehnel_support2EDIT-1024x783.png" alt="" class="wp-image-534" width="512" height="392"></figure>
 
 The key is this: You’re not being _given_ a job. This isn’t a tryout. It’s an **equal exchange**. Your employer gets a valuable addition to their team, and you get a salary (plus the fulfillment of putting your talents to good, productive use).
 
@@ -61,7 +61,7 @@ If you spent all the cash in your bank accounts and maxed out your credit cards,
 
 If a _company_ runs out of money, it’s usually toast. Without cash flow, it can’t pay its employees, buy materials or supplies, or provide services for its clients. Money is like oxygen to a company. If it doesn’t get enough, the lights go out and it’s dead forever.
 
-<figure class="aligncenter size-large is-resized"><img src="/images/posts/39-ways-companies-stack-the-deck-against-you-in-the-job-interview-process/tomdehnel_support1EDIT-1024x949.png" alt="" class="wp-image-535" width="512" height="475"></figure>
+<figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="/images/posts/39-ways-companies-stack-the-deck-against-you-in-the-job-interview-process/tomdehnel_support1EDIT-1024x949.png" alt="" class="wp-image-535" width="512" height="475"></figure>
 
 This simple fact means companies have learned to be ruthless about cost reduction. Even at the rare companies that pay their people well, the goal is almost always to pay their workers as little as possible.
 
@@ -90,7 +90,7 @@ As many people as possible should internalize this concept so they can avoid fal
 5.  **They offer you things instead of money.**
     -   They tell you how they have this great summer Friday policy. Or they show off the coffee machine. Or say you can bring your dog to work. Or they’ll have someone come and pick up your dry cleaning, like a king! These things are nice, but given the choice, most people would rather have the money.
 
-<figure class="aligncenter size-large is-resized"><img src="/images/posts/39-ways-companies-stack-the-deck-against-you-in-the-job-interview-process/tomdehnel_support3EDIT-1024x857.png" alt="" class="wp-image-536" width="512" height="429"></figure>
+<figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="/images/posts/39-ways-companies-stack-the-deck-against-you-in-the-job-interview-process/tomdehnel_support3EDIT-1024x857.png" alt="" class="wp-image-536" width="512" height="429"></figure>
 
 6.  **They make you talk salary with an HR stooge.**
     -   When it comes time to negotiate the price, they make you speak with someone new. Just like when the car dealership has you talk to the “finance manager.” This person doesn’t understand your value and you haven’t had the chance to build any rapport with them. Typically all they're allowed to do is quote company policy.
@@ -129,7 +129,7 @@ As many people as possible should internalize this concept so they can avoid fal
 23.  **They make you take a pre-employment drug screening.**
      -   Nothing says “I own you” more than forcing you to piss in a plastic cup then put it on a little tray. Then they ship your urine off to analyze it and see what you’ve been doing in your off time. As if it’s any of their business. Offensive and dehumanizing.
 
-<figure class="alignright size-medium"><img src="/images/posts/39-ways-companies-stack-the-deck-against-you-in-the-job-interview-process/tomdehnel_spot1EDIT-250x300.png" alt="" class="wp-image-537"></figure>
+<figure class="alignright size-medium"><img loading="lazy" decoding="async" src="/images/posts/39-ways-companies-stack-the-deck-against-you-in-the-job-interview-process/tomdehnel_spot1EDIT-250x300.png" alt="" class="wp-image-537"></figure>
 
 24.  **They make you sign an NDA.**
      -   They prop up their own authority by treating their completely normal and obvious business operations like they are on some kind of top-secret government mission. Just another way they try to make you feel lucky to get to be there.
@@ -170,7 +170,7 @@ In my experience, companies really don’t like it when you call them out for th
 
 Remember, companies need money to live. Giving you the upper hand by exposing their tactics is like squeezing off a dying man’s oxygen; he’s going to fight for it.
 
-<figure class="alignright size-medium is-resized"><img src="/images/posts/39-ways-companies-stack-the-deck-against-you-in-the-job-interview-process/tomdehnel_spot2EDIT-250x300.png" alt="" class="wp-image-538" width="188" height="225"></figure>
+<figure class="alignright size-medium is-resized"><img loading="lazy" decoding="async" src="/images/posts/39-ways-companies-stack-the-deck-against-you-in-the-job-interview-process/tomdehnel_spot2EDIT-250x300.png" alt="" class="wp-image-538" width="188" height="225"></figure>
 
 I should also note that this behavior is not usually directly intentional on the part of the people who are carrying it out. Most managers of the hiring process and their staff are just doing what they assume is the right way to hire, without thinking too hard about the experience they’re creating.
 
@@ -204,4 +204,4 @@ But if you can be aware they’re going to try these tactics on you, you’ll be
 
 Good luck out there.
 
-<figure class="aligncenter size-large"><img src="/images/posts/39-ways-companies-stack-the-deck-against-you-in-the-job-interview-process/flourishFINAL.png" alt="" class="wp-image-524"></figure>
+<figure class="aligncenter size-large"><img loading="lazy" decoding="async" src="/images/posts/39-ways-companies-stack-the-deck-against-you-in-the-job-interview-process/flourishFINAL.png" alt="" class="wp-image-524"></figure>

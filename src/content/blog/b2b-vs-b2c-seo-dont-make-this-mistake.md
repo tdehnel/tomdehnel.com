@@ -41,15 +41,15 @@ If the new hire needs a new mouse, the Board of Directors doesn’t need to get 
 
 But there are some people who take their mice seriously. Very seriously indeed.
 
-<figure class="wp-block-image"><img src="/images/posts/b2b-vs-b2c-seo-dont-make-this-mistake/gamer-with-mouse-florian-olivo-1024x683.jpeg" alt="" class="wp-image-321"><figcaption>Image by <a href="https://unsplash.com/photos/Mf23RF8xArY">Florian Olvero</a> (via Unsplash)</figcaption></figure>
+<figure class="wp-block-image"><img loading="lazy" decoding="async" src="/images/posts/b2b-vs-b2c-seo-dont-make-this-mistake/gamer-with-mouse-florian-olivo-1024x683.jpeg" alt="" class="wp-image-321"><figcaption>Image by <a href="https://unsplash.com/photos/Mf23RF8xArY">Florian Olvero</a> (via Unsplash)</figcaption></figure>
 
 Gamers live and die by their mouse. Their scores (and reputations) depend on their hardware’s accuracy and speed. They’re not going to buy just any old mouse.
 
-<figure class="wp-block-image"><img src="/images/posts/b2b-vs-b2c-seo-dont-make-this-mistake/amazon-50000-gaming-mice-1024x356.png" alt="" class="wp-image-322"></figure>
+<figure class="wp-block-image"><img loading="lazy" decoding="async" src="/images/posts/b2b-vs-b2c-seo-dont-make-this-mistake/amazon-50000-gaming-mice-1024x356.png" alt="" class="wp-image-322"></figure>
 
 To complicate things further, there are over 50,000 results for “gaming mouse” on Amazon. And some gaming mice (like the [Razer Mamba Hyperflux](https://www.razer.com/gaming-mice/razer-mamba-hyperflux)) can cost hundreds of dollars.
 
-<figure class="wp-block-image"><img src="/images/posts/b2b-vs-b2c-seo-dont-make-this-mistake/razer-hyperflux-mamba-1024x502.png" alt="" class="wp-image-323"></figure>
+<figure class="wp-block-image"><img loading="lazy" decoding="async" src="/images/posts/b2b-vs-b2c-seo-dont-make-this-mistake/razer-hyperflux-mamba-1024x502.png" alt="" class="wp-image-323"></figure>
 
 Gamers might spend hours reading articles about gaming mice. They might talk to peers or read through dozens of reviews. They might even need to make a pitch to an internal stakeholder (Mom or Dad) to justify their purchase. Because of all that, there’s risk involved. If they make the wrong choice, they’ll have wasted all that time and could end up with something that hurts their performance.
 
@@ -69,7 +69,7 @@ So when you’re choosing an SEO consultant or agency, you should be looking dee
 
 ### Low Complexity
 
-<figure class="wp-block-image"><img src="/images/posts/b2b-vs-b2c-seo-dont-make-this-mistake/office-supplies-tim-gouw-1024x685.jpeg" alt="" class="wp-image-326"><figcaption>Image by <a href="https://unsplash.com/photos/X-QHOFxz2cA">Tim Gouw</a> (via Unsplash)</figcaption></figure>
+<figure class="wp-block-image"><img loading="lazy" decoding="async" src="/images/posts/b2b-vs-b2c-seo-dont-make-this-mistake/office-supplies-tim-gouw-1024x685.jpeg" alt="" class="wp-image-326"><figcaption>Image by <a href="https://unsplash.com/photos/X-QHOFxz2cA">Tim Gouw</a> (via Unsplash)</figcaption></figure>
 
 Does your customer tend to search for a specific product or service and then sift quickly through the first few Google results before making a decision? If that’s the case, you’ll first want to focus on making sure your core product or service pages are ranking high on the results page for your main product/service terms.
 
@@ -93,7 +93,7 @@ Examples of products with medium complexity buyer journeys:
 -   B2B: Project management software
 -   B2C: High-end hiking boots
 
-<figure class="wp-block-image"><img src="/images/posts/b2b-vs-b2c-seo-dont-make-this-mistake/hiking-boots-fidel-fernando-1024x683.jpeg" alt="" class="wp-image-325"><figcaption>Image by <a href="https://unsplash.com/photos/X-QHOFxz2cA">Fidel Fernando</a> (via Unsplash)</figcaption></figure>
+<figure class="wp-block-image"><img loading="lazy" decoding="async" src="/images/posts/b2b-vs-b2c-seo-dont-make-this-mistake/hiking-boots-fidel-fernando-1024x683.jpeg" alt="" class="wp-image-325"><figcaption>Image by <a href="https://unsplash.com/photos/X-QHOFxz2cA">Fidel Fernando</a> (via Unsplash)</figcaption></figure>
 
 For these products and services, we’d want to focus on optimizing our core business pages (just like low complexity businesses) but we’d also ensure we’re developing more informational content too.
 
@@ -110,7 +110,7 @@ Examples of products with high complexity buyer journeys:
 -   B2B: New app virtualization platform
 -   B2C: Extended trip to Europe
 
-<figure class="wp-block-image"><img src="/images/posts/b2b-vs-b2c-seo-dont-make-this-mistake/amsterdam-tim-trad-1024x683.jpeg" alt="" class="wp-image-327"><figcaption><strong>I'd rather be sitting here than in a Citrix demo, but that's just me.<br></strong>Image by <a href="https://unsplash.com/photos/S80l8OMq0xA">Tim Trad</a> (via Unsplash)</figcaption></figure>
+<figure class="wp-block-image"><img loading="lazy" decoding="async" src="/images/posts/b2b-vs-b2c-seo-dont-make-this-mistake/amsterdam-tim-trad-1024x683.jpeg" alt="" class="wp-image-327"><figcaption><strong>I'd rather be sitting here than in a Citrix demo, but that's just me.<br></strong>Image by <a href="https://unsplash.com/photos/S80l8OMq0xA">Tim Trad</a> (via Unsplash)</figcaption></figure>
 
 These customers often need lots of supporting data to share with others before they can make a decision. In this case, you’ll want to consider a broader approach where you invest in content that appeals to them at many different stages of their buying journey.
 

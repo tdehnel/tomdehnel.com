@@ -13,7 +13,7 @@ The growing use of the word "impact" to speak passively is weakening the English
 
 This week, I came across this press release on Twitter’s website:
 
-<figure class="wp-block-image size-large"><img src="/images/posts/the-word-impact-doesnt-have-any-impact-at-all/9A9B58F7-4F67-465E-BAA2-B98C70D57D36-796x1024.jpeg" alt="" class="wp-image-701"></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" src="/images/posts/the-word-impact-doesnt-have-any-impact-at-all/9A9B58F7-4F67-465E-BAA2-B98C70D57D36-796x1024.jpeg" alt="" class="wp-image-701"></figure>
 
 [https://privacy.twitter.com/en/blog/2022/an-issue-affecting-some-anonymous-accounts](https://privacy.twitter.com/en/blog/2022/an-issue-affecting-some-anonymous-accounts)
 
@@ -23,7 +23,7 @@ If the purpose of a headline is to convey what the reader might learn about by r
 
 But its not just the corp comms robots at Twitter. People are so afraid to make a claim nowadays, even if it's obviously true. Over the last few years I’ve noticed an increase in this kind of language. And the word ”impact” is often at the center of it.
 
-<figure class="wp-block-image size-large"><img src="/images/posts/the-word-impact-doesnt-have-any-impact-at-all/5F71D8BA-B791-4F6F-ADAD-F5F93004C127-920x1024.jpeg" alt="" class="wp-image-702"></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" src="/images/posts/the-word-impact-doesnt-have-any-impact-at-all/5F71D8BA-B791-4F6F-ADAD-F5F93004C127-920x1024.jpeg" alt="" class="wp-image-702"></figure>
 
 [https://books.google.com/ngrams/graph?content=impacting&year...](https://books.google.com/ngrams/graph?content=impacting&year...)
 

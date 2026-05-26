@@ -23,12 +23,35 @@ const manualRedirects = {
 
 const redirects = { ...generatedRedirects, ...manualRedirects };
 
+/**
+ * Tiny rehype plugin: mark every <img> inside Markdown bodies as lazy-loaded
+ * with async decoding. Hero images are rendered by BlogPost.astro / PageLayout.astro
+ * and aren't affected — those stay eager and high-priority.
+ */
+function rehypeLazyImages() {
+  return (tree) => {
+    const visit = (node) => {
+      if (node.type === "element" && node.tagName === "img") {
+        node.properties = node.properties || {};
+        if (!("loading" in node.properties)) node.properties.loading = "lazy";
+        if (!("decoding" in node.properties)) node.properties.decoding = "async";
+      }
+      if (node.children) for (const c of node.children) visit(c);
+    };
+    visit(tree);
+  };
+}
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://tomdehnel.com",
   trailingSlash: "ignore",
   redirects,
   integrations: [mdx(), sitemap()],
+
+  markdown: {
+    rehypePlugins: [rehypeLazyImages],
+  },
 
   fonts: [
     {

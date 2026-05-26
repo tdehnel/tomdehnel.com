@@ -1,4 +1,7 @@
 ---
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+import sharp from "sharp";
 import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
@@ -8,6 +11,21 @@ import Header from "../components/Header.astro";
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, excerpt, date, hero_image, tags = [], draft } = Astro.props;
+
+// Read hero image dimensions at build time so we can set explicit width/height —
+// the browser can then reserve space (avoids layout shift) and prioritize LCP.
+let heroDims: { width: number; height: number } | null = null;
+if (hero_image && hero_image.startsWith("/")) {
+  const fsPath = join(process.cwd(), "public", hero_image.slice(1));
+  if (existsSync(fsPath)) {
+    try {
+      const m = await sharp(fsPath).metadata();
+      if (m.width && m.height) heroDims = { width: m.width, height: m.height };
+    } catch {
+      // Non-fatal: render without dimensions if sharp can't read it.
+    }
+  }
+}
 ---
 
 <html lang="en">
@@ -52,17 +70,25 @@ const { title, excerpt, date, hero_image, tags = [], draft } = Astro.props;
         color: rgb(var(--gray));
       }
       .tags {
-        margin: 0.5em 0 0 0;
-        font-size: 0.85em;
+        margin: 0.75em 0 0 0;
+        font-size: 0.95em;
         color: rgb(var(--gray));
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.25em;
       }
       .tags a {
         color: rgb(var(--gray));
         text-decoration: none;
-        margin-right: 0.5em;
+        padding: 0.35em 0.6em;
+        border-radius: 4px;
+        display: inline-block;
+        min-height: 24px;
       }
       .tags a:hover {
         color: var(--accent);
+        background: rgb(var(--gray-light));
       }
       .draft-banner {
         background: #fff7e0;
@@ -84,7 +110,15 @@ const { title, excerpt, date, hero_image, tags = [], draft } = Astro.props;
       <article>
         {hero_image && (
           <div class="hero-image">
-            <img src={hero_image} alt="" />
+            <img
+              src={hero_image}
+              alt=""
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              width={heroDims?.width}
+              height={heroDims?.height}
+            />
           </div>
         )}
         <div class="prose">

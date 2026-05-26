@@ -115,7 +115,7 @@ The postmodernist ideas that _reality is unknowable_ or _X is a social construct
 
 When you apply postmodernist thinking to postmodernism itself, it vanishes in a puff of logic.
 
-<figure class="wp-block-image size-large"><img src="/images/posts/principles/postmodernism-disappears-in-a-puff-of-logic-1024x173.png" alt="" class="wp-image-832"></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" src="/images/posts/principles/postmodernism-disappears-in-a-puff-of-logic-1024x173.png" alt="" class="wp-image-832"></figure>
 
 ## Be as direct as possible, even when it's uncomfortable for you
 
@@ -151,7 +151,7 @@ This phrase is often used when introducing a new rule. People will say "Why don'
 
 When we add a rule to a complex system, there will always be some tradeoff, regardless of whether we see it or not. Usually, the anticipated cost is accurately expected to be low. But sometimes it ends up being high. And small costs always add up to big ones.
 
-<figure class="wp-block-image size-large"><img src="/images/posts/principles/Screenshot-2025-03-11-at-1.10.18_E2_80_AFPM-1024x301.png" alt="" class="wp-image-964"></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" src="/images/posts/principles/Screenshot-2025-03-11-at-1.10.18_E2_80_AFPM-1024x301.png" alt="" class="wp-image-964"></figure>
 
 ## Give a fish today, teach to fish tomorrow
 

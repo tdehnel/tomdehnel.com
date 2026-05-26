@@ -27,7 +27,7 @@ For backlinks, we have domain and URL metrics. Or you can just count how many li
 
 But **content quality is almost totally subjective**. Your reader either gets the _feeling_ that your content is high-quality, or they don’t.
 
-<figure class="aligncenter size-large"><img src="/images/posts/why-content-quality-matters-for-seo/once-more-with-feeling.jpeg" alt="" class="wp-image-463"><figcaption>By Source, Fair use, https://en.wikipedia.org/w/index.php?curid=8084151</figcaption></figure>
+<figure class="aligncenter size-large"><img loading="lazy" decoding="async" src="/images/posts/why-content-quality-matters-for-seo/once-more-with-feeling.jpeg" alt="" class="wp-image-463"><figcaption>By Source, Fair use, https://en.wikipedia.org/w/index.php?curid=8084151</figcaption></figure>
 
 And if they don’t get that nice, quality feeling, they’re much more likely to hit the back button and spend time with someone else’s content instead. And that’s bad for SEO.
 
@@ -73,7 +73,7 @@ Here’s how to do it.
 
 Lead with useful information, otherwise those readers you worked so hard to get to your site are going to hit the back button and click on another search result.
 
-<figure class="aligncenter size-medium"><img src="/images/posts/why-content-quality-matters-for-seo/inverted-pyramid-300x289.png" alt="" class="wp-image-462"></figure>
+<figure class="aligncenter size-medium"><img loading="lazy" decoding="async" src="/images/posts/why-content-quality-matters-for-seo/inverted-pyramid-300x289.png" alt="" class="wp-image-462"></figure>
 
 Use [the inverted pyramid approach](https://www.nngroup.com/articles/inverted-pyramids-in-cyberspace/) to make sure you’re writing content that gives the people what they came for, then gives them the option to read more for detail and nuance.
 

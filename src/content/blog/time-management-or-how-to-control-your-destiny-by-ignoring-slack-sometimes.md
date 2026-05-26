@@ -57,7 +57,7 @@ _Protip: Slack notifications should really only be used for things that really, 
 
 An easy win is to disable notifications for any Slack message that’s not a DM or specific mention of your name. That way I’m not getting distracted with a message about 🍩 [Nani’s Donuts](http://www.nanisdough.com/) for the 37th time (sorry Nani).
 
-<figure class="graf graf--figure"><img class="graf-image aligncenter" src="/images/posts/time-management-or-how-to-control-your-destiny-by-ignoring-slack-sometimes/1_9zhayEmgjzR8C1Cl6LjgfQ.png" data-image-id="1*9zhayEmgjzR8C1Cl6LjgfQ.png" data-width="1580" data-height="832"></figure>
+<figure class="graf graf--figure"><img loading="lazy" decoding="async" class="graf-image aligncenter" src="/images/posts/time-management-or-how-to-control-your-destiny-by-ignoring-slack-sometimes/1_9zhayEmgjzR8C1Cl6LjgfQ.png" data-image-id="1*9zhayEmgjzR8C1Cl6LjgfQ.png" data-width="1580" data-height="832"></figure>
 
 You can also mute particularly distracting or popular channels, allowing you to go back and check in with those channels at a time when you can give them your full attention.
 
@@ -67,7 +67,7 @@ A news publisher needs some info on your company before they’ll write a story 
 
 Don’t worry, your coworkers aren’t needy SOs. They can manage if you don’t respond right away while you finish up some work.
 
-<figure class="graf graf--figure"><img class="graf-image aligncenter" src="/images/posts/time-management-or-how-to-control-your-destiny-by-ignoring-slack-sometimes/0_a3Ex5TovwM_Qa2Hh." data-image-id="0*a3Ex5TovwM_Qa2Hh." data-width="360" data-height="266" data-is-featured="true"></figure>
+<figure class="graf graf--figure"><img loading="lazy" decoding="async" class="graf-image aligncenter" src="/images/posts/time-management-or-how-to-control-your-destiny-by-ignoring-slack-sometimes/0_a3Ex5TovwM_Qa2Hh." data-image-id="0*a3Ex5TovwM_Qa2Hh." data-width="360" data-height="266" data-is-featured="true"></figure>
 
 ### Prioritizing Tasks
 

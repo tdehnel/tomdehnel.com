@@ -43,7 +43,7 @@ The Web Vitals report features a more detailed analysis on how a page performs i
 
 Core Web Vitals frames website performance as an issue related more to customer experience than SEO. By framing the performance of a target URL against those of other similar web pages, website operators can get a better understanding of how their page speed stacks up to competitors and make a plan to improve.
 
-<figure class="wp-block-image size-large"><img src="/images/posts/page-speed-benefits-of-a-fast-website-for-seo/Page-Speed-and-Bounce-Rate.png" alt="" class="wp-image-651"></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" src="/images/posts/page-speed-benefits-of-a-fast-website-for-seo/Page-Speed-and-Bounce-Rate.png" alt="" class="wp-image-651"></figure>
 
 ## **Google’s Views On Speed as a Ranking Factor**
 
@@ -53,7 +53,7 @@ A tie breaker is a function of Google’s ranking algorithm; one that attempts t
 
 In cases where an initial tie-break attempt fails, Gary Illyes -  a Webmaster Trends Analyst at Google - [suggests that page speed](https://www.seroundtable.com/google-talks-hypothetically-about-speed-as-a-ranking-factor-31375.html) would functionally serve as a 2nd tier tie breaker. 
 
-<figure class="wp-block-image size-large"><img src="/images/posts/page-speed-benefits-of-a-fast-website-for-seo/Speed-Flow-Chart.png" alt="" class="wp-image-652"></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" src="/images/posts/page-speed-benefits-of-a-fast-website-for-seo/Speed-Flow-Chart.png" alt="" class="wp-image-652"></figure>
 
 ## **The Benefits of a Fast Website**
 

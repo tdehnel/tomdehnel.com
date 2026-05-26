@@ -31,15 +31,15 @@ But different clients (that's you) have different needs. They have unique custom
 
 That's how we get results like this:
 
-<figure class="wp-block-image size-large"><img src="/images/pages/seo-consulting/Screen-Shot-2020-05-13-at-10.29.02-AM.png" alt="" class="wp-image-469"></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" src="/images/pages/seo-consulting/Screen-Shot-2020-05-13-at-10.29.02-AM.png" alt="" class="wp-image-469"></figure>
 
 Or this:
 
-<figure class="wp-block-image size-large"><img src="/images/pages/seo-consulting/Screenshot-2023-01-18-at-7.26.36-AM-1024x376.png" alt="" class="wp-image-737"></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" src="/images/pages/seo-consulting/Screenshot-2023-01-18-at-7.26.36-AM-1024x376.png" alt="" class="wp-image-737"></figure>
 
 Or this:
 
-<figure class="wp-block-image size-large"><img src="/images/pages/seo-consulting/Screen-Shot-2021-06-01-at-9.20.41-AM.png" alt="" class="wp-image-642"></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" src="/images/pages/seo-consulting/Screen-Shot-2021-06-01-at-9.20.41-AM.png" alt="" class="wp-image-642"></figure>
 
 You can [contact me via LinkedIn](https://www.linkedin.com/in/tdehnel/), or read more about my approach below.
 

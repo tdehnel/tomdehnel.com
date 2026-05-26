@@ -8,4 +8,4 @@ draft: false
 original_url: "https://tomdehnel.com/government-funded-progress/"
 ---
 
-<figure class="wp-block-image size-large"><img src="/images/posts/government-funded-progress/IMG_0931-683x1024.png" alt="" class="wp-image-970"></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" src="/images/posts/government-funded-progress/IMG_0931-683x1024.png" alt="" class="wp-image-970"></figure>

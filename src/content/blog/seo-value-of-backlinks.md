@@ -12,7 +12,7 @@ draft: false
 original_url: "https://tomdehnel.com/seo-value-of-backlinks/"
 ---
 
-#### A guide to backlinks and why they’re important for SEO and organic traffic growth
+## A guide to backlinks and why they’re important for SEO and organic traffic growth
 
 This guide is for people who want to know **why** links (aka backlinks) are an important tool to grow traffic to a website.
 
@@ -30,7 +30,7 @@ I’ll start with a brief history of search engines because I think it adds impo
 
 [Search engines](https://en.wikipedia.org/wiki/Web_search_engine) used to suck. Anyone who was around in the 90s or early 00s likely remembers using some of the earlier search platforms: Lycos, Excite, AskJeeves, Altavista, and the rest. You’d type something in, then scroll through pages and pages of results, often not finding anything useful at all.  
 
-<figure class="aligncenter is-resized"><img src="/images/posts/seo-value-of-backlinks/100727-AskJeevesButler-hmed-118a.standard.jpg" alt="screenshot of ask jeeves, an early search engine" class="wp-image-201" width="401" height="241"><figcaption>It turns out people didn’t actually want to ask a cartoon butler questions.</figcaption></figure>
+<figure class="aligncenter is-resized"><img loading="lazy" decoding="async" src="/images/posts/seo-value-of-backlinks/100727-AskJeevesButler-hmed-118a.standard.jpg" alt="screenshot of ask jeeves, an early search engine" class="wp-image-201" width="401" height="241"><figcaption>It turns out people didn’t actually want to ask a cartoon butler questions.</figcaption></figure>
 
 They were so bad there was even a search engine called Dogpile which searched **all the other search engines** for you. It spat out the combined results, the quality of which were comparable to what comes out of an actual dog.
 
@@ -43,13 +43,13 @@ Those early web search platforms didn’t work that well because they had an uns
 
 Website operators and marketers (crafty types that we are) got wind of this and started to game the system by jamming our pages full of search terms (aka keywords). As a result, you’d see keywords just blatantly repeated on a page, like this:
 
-<figure class="aligncenter"><img src="/images/posts/seo-value-of-backlinks/keyword-stuffing.png" alt="Example of text with overused keywords" class="wp-image-226"><figcaption>Keyword stuffing</figcaption></figure>
+<figure class="aligncenter"><img loading="lazy" decoding="async" src="/images/posts/seo-value-of-backlinks/keyword-stuffing.png" alt="Example of text with overused keywords" class="wp-image-226"><figcaption>Keyword stuffing</figcaption></figure>
 
 But marketers were thirsty for traffic, so sometimes to really juice up their sites, they would even **add keywords in the same color as the site background**.
 
 That way, they could fit more keywords in and trick the search engines into thinking their page was **really** about that keyword. You could often see the text if you highlighted it with your cursor:
 
-<figure class="aligncenter"><img src="/images/posts/seo-value-of-backlinks/hidden-keywords.png" alt="Example of text with hidden keywords on the page" class="wp-image-224"><figcaption>Hidden keyword stuffing</figcaption></figure>
+<figure class="aligncenter"><img loading="lazy" decoding="async" src="/images/posts/seo-value-of-backlinks/hidden-keywords.png" alt="Example of text with hidden keywords on the page" class="wp-image-224"><figcaption>Hidden keyword stuffing</figcaption></figure>
 
 This tactic is called keyword stuffing. Smart SEO people don’t use it anymore, but it used to be common. And, it helped a lot of untrustworthy websites rank highly in search.
 
@@ -75,7 +75,7 @@ This new 4th step was really smart. It produced search results that were much be
 
 Their theory was that the human beings who make websites would only link to other websites _if they trusted_ the website they were linking to. Therefore, it was reasonable to think that _sites with more links to them_ should be seen as more trustworthy.
 
-<figure class="aligncenter is-resized"><img src="/images/posts/seo-value-of-backlinks/kreYM7HE0O8k_M855RN2jm3O26dXVfHkp_VXHLpb3BVScGepUWAKX2bIqLQPKXlSb01fyP_Em4TA5yCgpA1vL-tMu8HGgtJyIylKkDY1zGLcLQ4O6upnk_OfsvbnTd6iS8Oi-90F.jpg" alt="visual representation of the pagerank algorithm" width="436" height="360"><figcaption>Visual representation of the PageRank algorithm</figcaption></figure>
+<figure class="aligncenter is-resized"><img loading="lazy" decoding="async" src="/images/posts/seo-value-of-backlinks/kreYM7HE0O8k_M855RN2jm3O26dXVfHkp_VXHLpb3BVScGepUWAKX2bIqLQPKXlSb01fyP_Em4TA5yCgpA1vL-tMu8HGgtJyIylKkDY1zGLcLQ4O6upnk_OfsvbnTd6iS8Oi-90F.jpg" alt="visual representation of the pagerank algorithm" width="436" height="360"><figcaption>Visual representation of the PageRank algorithm</figcaption></figure>
 
 It wasn’t just about pure numbers of links, either. Google tweaked their calculations so that some links were more valuable than others. Essentially, links from websites _with more links to them_ were counted more heavily in the calculations.
 
@@ -171,7 +171,7 @@ Things are going well at the food blog. You’re posting lots of recipes, restau
 
 Now imagine you learn that your food blog has been endorsed by none other than Justin Trudeau, the Prime Minister of Canada.  
 
-<figure class="aligncenter is-resized"><img src="/images/posts/seo-value-of-backlinks/justin-trudeau-802x1024.png" alt="portrait of Justin Trudeau" class="wp-image-225" width="236" height="301"><figcaption>There he is!</figcaption></figure>
+<figure class="aligncenter is-resized"><img loading="lazy" decoding="async" src="/images/posts/seo-value-of-backlinks/justin-trudeau-802x1024.png" alt="portrait of Justin Trudeau" class="wp-image-225" width="236" height="301"><figcaption>There he is!</figcaption></figure>
 
 Trudeau seems like a good guy. He’s certainly popular and well-known. So it’s fair to say that his endorsement would help more people to trust your food blog. We can think of Trudeau’s endorsement as a _high-authority_ endorsement.
 
@@ -183,7 +183,7 @@ So we can think of Trudeau’s endorsement as high in authority, but _low in rel
 
 Now imagine your food blog gets an endorsement from celebrity chef Gordon Ramsay. Ramsay is a food man through and through. If you haven’t made his [scrambled eggs](https://www.youtube.com/watch?v=PUP7U5vTMM0) recipe yet you’re missing out on one of the simple pleasures of life.
 
-<figure class="aligncenter"><img src="/images/posts/seo-value-of-backlinks/gordon-ramsay.png" alt="Gordon Ramsay yelling at a contestant on Hell's Kitchen" class="wp-image-223"><figcaption>"Stuffing is what you do with a turkey, not keywords!" <g class="gr_ gr_4 gr-alert gr_gramm gr_inline_cards gr_run_anim Punctuation only-ins replaceWithoutSep" id="4" data-gr-id="4">Yes</g> I know this is a bad joke.</figcaption></figure>
+<figure class="aligncenter"><img loading="lazy" decoding="async" src="/images/posts/seo-value-of-backlinks/gordon-ramsay.png" alt="Gordon Ramsay yelling at a contestant on Hell's Kitchen" class="wp-image-223"><figcaption>"Stuffing is what you do with a turkey, not keywords!" <g class="gr_ gr_4 gr-alert gr_gramm gr_inline_cards gr_run_anim Punctuation only-ins replaceWithoutSep" id="4" data-gr-id="4">Yes</g> I know this is a bad joke.</figcaption></figure>
 
 An endorsement from Ramsay to your food blog would be super valuable because Ramsay clearly knows food. This is a great example of a _relevant_ endorsement.
 
@@ -244,7 +244,7 @@ One word of caution. Many website owners end up hyper-focusing on these metrics 
 
 Anchor text is the words that are on the link itself. For example:
 
-<figure class="aligncenter"><img src="/images/posts/seo-value-of-backlinks/anchor-text.png" alt="" class="wp-image-220"><figcaption>Anchor text</figcaption></figure>
+<figure class="aligncenter"><img loading="lazy" decoding="async" src="/images/posts/seo-value-of-backlinks/anchor-text.png" alt="" class="wp-image-220"><figcaption>Anchor text</figcaption></figure>
 
 By “reading” this text, Google can make an educated guess at what the website it links to is about. That might help it rank better for searches related to that text.
 
@@ -252,7 +252,7 @@ By “reading” this text, Google can make an educated guess at what the websit
 
 This one is super interesting. Google has [filed a patent](http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&d=PALL&p=1&u=%2Fnetahtml%2FPTO%2Fsrchnum.htm&r=1&f=G&l=50&s1=10,210,256.PN.&OS=PN/10,210,256&RS=PN/10,210,256) which indicates they may be taking into account the words _around_ the link itself. Essentially, they can take unlinked text into consideration. For example:
 
-<figure class="aligncenter"><img src="/images/posts/seo-value-of-backlinks/annotation-text.png" alt="" class="wp-image-221"><figcaption>Anchor text annotation</figcaption></figure>
+<figure class="aligncenter"><img loading="lazy" decoding="async" src="/images/posts/seo-value-of-backlinks/annotation-text.png" alt="" class="wp-image-221"><figcaption>Anchor text annotation</figcaption></figure>
 
 In this case, Google might make an educated guess that the linked site has not only iguana cages but also accessories.
 

@@ -15,7 +15,7 @@ I work from home every day as an [SEO consultant](https://tomdehnel.com/san-fran
 
 At some point in your career you earned the flexibility and autonomy that comes with working from home. That's huge, congrats.
 
-<figure class="wp-block-image size-large"><img src="/images/posts/how-to-be-wise-about-working-from-home/Screen-Shot-2020-02-11-at-11.29.43-AM-1024x611.png" alt="" class="wp-image-413"><figcaption>Well done! Also how buck-wild is this stock photo?</figcaption></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" src="/images/posts/how-to-be-wise-about-working-from-home/Screen-Shot-2020-02-11-at-11.29.43-AM-1024x611.png" alt="" class="wp-image-413"><figcaption>Well done! Also how buck-wild is this stock photo?</figcaption></figure>
 
 But with great freedom comes great responsibility. It's up to you to figure out how to make the most of your new flexible work environment.
 
@@ -34,7 +34,7 @@ You can follow this list of tips to make sure you get the most out of your work-
 
 ## Structure
 
-<figure class="wp-block-image size-large"><img src="/images/posts/how-to-be-wise-about-working-from-home/Screen-Shot-2020-02-11-at-11.30.30-AM-1024x665.png" alt="" class="wp-image-414"><figcaption>You are sturdy like bridge.</figcaption></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" src="/images/posts/how-to-be-wise-about-working-from-home/Screen-Shot-2020-02-11-at-11.30.30-AM-1024x665.png" alt="" class="wp-image-414"><figcaption>You are sturdy like bridge.</figcaption></figure>
 
 **Make A List:** Start your day by making a list of what you want to accomplish. Be realistic with this. Start with a few bigger pieces and then fill in the gaps with smaller ones. Some days you might have just one big item on your list, but the idea is to hold yourself accountable and finish what you plan.
 
@@ -44,7 +44,7 @@ You can follow this list of tips to make sure you get the most out of your work-
 
 ## Variety
 
-<figure class="wp-block-image size-large"><img src="/images/posts/how-to-be-wise-about-working-from-home/Screen-Shot-2020-02-11-at-11.32.02-AM.png" alt="" class="wp-image-415"><figcaption>You gotta un"leash" your need for variety 💥</figcaption></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" src="/images/posts/how-to-be-wise-about-working-from-home/Screen-Shot-2020-02-11-at-11.32.02-AM.png" alt="" class="wp-image-415"><figcaption>You gotta un"leash" your need for variety 💥</figcaption></figure>
 
 **Change Up the Scenery:** One of the best ways to stay fresh is to switch up your environment. Take a few breaks each day to clear out any cobwebs and get some fresh air. Stand up. Take a walk around the block or go to the grocery store. Take care of something that needs fixing in the house. Literally any task other than your work will give your brain the chance it needs to process background tasks and reset.
 
@@ -52,7 +52,7 @@ You can follow this list of tips to make sure you get the most out of your work-
 
 ## Social Interaction
 
-<figure class="wp-block-image size-large"><img src="/images/posts/how-to-be-wise-about-working-from-home/Screen-Shot-2020-02-11-at-11.35.05-AM-1024x625.png" alt="" class="wp-image-416"><figcaption>No man is an island.</figcaption></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" src="/images/posts/how-to-be-wise-about-working-from-home/Screen-Shot-2020-02-11-at-11.35.05-AM-1024x625.png" alt="" class="wp-image-416"><figcaption>No man is an island.</figcaption></figure>
 
 **Work From Public:** Head out to a coffee shop for a couple of hours. You don't have to talk to anyone if you don't want to. Just being around people can help prevent feelings of isolation that are common among people who work from home. It feels good to become a "regular" somewhere. Bonus points for talking to strangers!
 
@@ -60,7 +60,7 @@ You can follow this list of tips to make sure you get the most out of your work-
 
 ## Health
 
-<figure class="wp-block-image size-large"><img src="/images/posts/how-to-be-wise-about-working-from-home/Screen-Shot-2020-02-11-at-11.35.48-AM-1024x661.png" alt="" class="wp-image-417"><figcaption>I'm conflicted on yoga. It makes me feel great but the whole spiritual aspect can seem kind of cheesy.</figcaption></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" src="/images/posts/how-to-be-wise-about-working-from-home/Screen-Shot-2020-02-11-at-11.35.48-AM-1024x661.png" alt="" class="wp-image-417"><figcaption>I'm conflicted on yoga. It makes me feel great but the whole spiritual aspect can seem kind of cheesy.</figcaption></figure>
 
 **Exercise:** Working from your desk all day can feel productive. But remember, "the only way you can hurt the body is not to use it." - Fitness OG [Jack LaLanne](https://www.livescience.com/35408-jack-lalanne-fitness-nutrition-advice-110124.html)
 
@@ -70,7 +70,7 @@ I have a rule. If I didn't exercise yesterday, I am going to exercise today (unl
 
 ## Reputation
 
-<figure class="wp-block-image size-large"><img src="/images/posts/how-to-be-wise-about-working-from-home/Screen-Shot-2020-02-11-at-11.37.41-AM-1024x681.png" alt="" class="wp-image-418"><figcaption>Goals.</figcaption></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" src="/images/posts/how-to-be-wise-about-working-from-home/Screen-Shot-2020-02-11-at-11.37.41-AM-1024x681.png" alt="" class="wp-image-418"><figcaption>Goals.</figcaption></figure>
 
 **Communication:** Respond to emails within a set time (I like 24 hours). DMs are 4 hours, and phone calls as soon as I can. One great tip I got from my stepdad is to send one of those auto "I will call you right back" texts if you can't pick up the phone.
 
@@ -80,7 +80,7 @@ I have a rule. If I didn't exercise yesterday, I am going to exercise today (unl
 
 ## Self-Confidence
 
-<figure class="wp-block-image size-large"><img src="/images/posts/how-to-be-wise-about-working-from-home/Screen-Shot-2020-02-11-at-11.38.32-AM-1024x667.png" alt="" class="wp-image-419"><figcaption>Pigeon gives zero fucks. Be like Pigeon.</figcaption></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" src="/images/posts/how-to-be-wise-about-working-from-home/Screen-Shot-2020-02-11-at-11.38.32-AM-1024x667.png" alt="" class="wp-image-419"><figcaption>Pigeon gives zero fucks. Be like Pigeon.</figcaption></figure>
 
 **Work When You Want:** the 9-to-5 workday is a vestigial remnant of the Industrial Revolution. It'll do wonders for your self-esteem if you realize this and start working when you want to. Spend all day Saturday working so you can go skiing on Monday and Tuesday. I've found there's nothing better for my mental health than to affirm that I'm in control of doing what I want, when I want.
 

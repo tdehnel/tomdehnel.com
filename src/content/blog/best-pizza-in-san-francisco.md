@@ -55,7 +55,7 @@ Here’s how I determined the 6 best pizzerias to judge:
 
 We sampled all 6 pizzerias in a single day (Saturday, Nov 16th), rating each pizza using a standard scoring system. 
 
-<figure class="aligncenter is-resized"><img src="/images/posts/best-pizza-in-san-francisco/Screen-Shot-2019-12-18-at-6.28.57-PM-365x1024.png" alt="" class="wp-image-336" width="274" height="768"></figure>
+<figure class="aligncenter is-resized"><img loading="lazy" decoding="async" src="/images/posts/best-pizza-in-san-francisco/Screen-Shot-2019-12-18-at-6.28.57-PM-365x1024.png" alt="" class="wp-image-336" width="274" height="768"></figure>
 
 ## The Rules
 
@@ -84,7 +84,7 @@ At the end of the day, we had 30 pizza scorecards (6 pizzerias X 5 judges). I ad
 
 ## The Results: The Best Pizza in Francisco
 
-<figure class="wp-block-image"><img src="/images/posts/best-pizza-in-san-francisco/Screen-Shot-2019-12-18-at-6.07.37-PM-1024x637.png" alt="" class="wp-image-337"></figure>
+<figure class="wp-block-image"><img loading="lazy" decoding="async" src="/images/posts/best-pizza-in-san-francisco/Screen-Shot-2019-12-18-at-6.07.37-PM-1024x637.png" alt="" class="wp-image-337"></figure>
 
 Congratulations to [Square Pie Guys](https://squarepieguys.com)!
 

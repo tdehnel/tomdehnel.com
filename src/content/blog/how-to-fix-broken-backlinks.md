@@ -31,7 +31,7 @@ But users rarely click these links. The most important reason broken backlinks a
 
 According to Google, "if other prominent websites link to the page (what is known as PageRank), that has proven to be a good sign that the information is well trusted.
 
-<figure class="wp-block-image size-large"><img src="/images/posts/how-to-fix-broken-backlinks/Screen-Shot-2020-07-29-at-2.56.16-PM-1024x655.png" alt="" class="wp-image-512"><figcaption>From <a href="https://www.google.com/search/howsearchworks/algorithms/">https://www.google.com/search/howsearchworks/algorithms/</a></figcaption></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" src="/images/posts/how-to-fix-broken-backlinks/Screen-Shot-2020-07-29-at-2.56.16-PM-1024x655.png" alt="" class="wp-image-512"><figcaption>From <a href="https://www.google.com/search/howsearchworks/algorithms/">https://www.google.com/search/howsearchworks/algorithms/</a></figcaption></figure>
 
 In other words, Google looks at backlinks as “votes of confidence” in a web page. If other people are linking **to** a page on your website, Google takes that to mean that the page on your website is trustworthy. But **[Google ignores these links completely](https://www.searchenginejournal.com/301-redirect-pagerank/275503/) if they result in a 404 error**.
 
@@ -47,7 +47,7 @@ There are a few SEO tools that can do this, but I like [ahrefs](https://ahrefs.c
 
 Just navigate to the Broken Backlinks report in the sidebar menu:
 
-<figure class="wp-block-image"><img src="/images/posts/how-to-fix-broken-backlinks/m8IkG2lxmGL4v4DRAEcUGTQhkVgJvUiYpQ15a_A37nI2UlSsQemxj-vycRoYQgiFvdYKIi0FfgfSvrJdNKvcG43PolF71o0vF9PIDvUwVDdEA8lnfZScBuzHAlEQ8MFLoZ8QbXvr.jpg" alt=""></figure>
+<figure class="wp-block-image"><img loading="lazy" decoding="async" src="/images/posts/how-to-fix-broken-backlinks/m8IkG2lxmGL4v4DRAEcUGTQhkVgJvUiYpQ15a_A37nI2UlSsQemxj-vycRoYQgiFvdYKIi0FfgfSvrJdNKvcG43PolF71o0vF9PIDvUwVDdEA8lnfZScBuzHAlEQ8MFLoZ8QbXvr.jpg" alt=""></figure>
 
 ## **How do I fix Broken Backlinks?**
 
@@ -61,7 +61,7 @@ In the case of a typo or misspelled link, create a redirect from the incorrect U
 
 If the broken backlink is to a page that no longer exists, find the closest possible replacement for that page. A good method is to use the **site: search operator** to find the best replacement page on your website.
 
-<figure class="wp-block-image"><img src="/images/posts/how-to-fix-broken-backlinks/5HLsROZMmR5bMhOh_lujY44HhJgViNZGP-doTI6HdGclfbi_tNTKto0dlY9NUn5NCeVnmQaRicZwIgYT_eGM4QQbsZjpMCGiB4BoqlvwFFVA3eC3fqlST20-B7IOOsquXH0wgmzY.jpg" alt=""></figure>
+<figure class="wp-block-image"><img loading="lazy" decoding="async" src="/images/posts/how-to-fix-broken-backlinks/5HLsROZMmR5bMhOh_lujY44HhJgViNZGP-doTI6HdGclfbi_tNTKto0dlY9NUn5NCeVnmQaRicZwIgYT_eGM4QQbsZjpMCGiB4BoqlvwFFVA3eC3fqlST20-B7IOOsquXH0wgmzY.jpg" alt=""></figure>
 
 If the broken backlink is to an image or other media that no longer exists, try to find a replacement, or put that media back up.
 

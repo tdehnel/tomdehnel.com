@@ -59,7 +59,7 @@ When you're reading or hearing someone speak, you can pause and ask yourself "am
 
 You don't have to look further than the front page of mainstream news outlets to see Russell Conjugation in action. Here's an example from the New York Times home page in May of 2021:
 
-<figure class="wp-block-image size-large"><img src="/images/posts/what-is-russell-conjugation/Screen-Shot-2021-05-13-at-7.13.46-AM-1024x400.png" alt="" class="wp-image-612"></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" src="/images/posts/what-is-russell-conjugation/Screen-Shot-2021-05-13-at-7.13.46-AM-1024x400.png" alt="" class="wp-image-612"></figure>
 
 Note how the paper describes the conflict as "civil unrest". Next to the article is a photograph of a large explosion going off in the middle of a city.
 
@@ -69,7 +69,7 @@ The use of the term "civil unrest" seems to imply that the conflict is less seri
 
 Here's another one from Fox News, also from May of 2021:
 
-<figure class="wp-block-image size-large"><img src="/images/posts/what-is-russell-conjugation/Screen-Shot-2021-05-13-at-7.47.05-AM-1024x534.png" alt="" class="wp-image-614"></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" src="/images/posts/what-is-russell-conjugation/Screen-Shot-2021-05-13-at-7.47.05-AM-1024x534.png" alt="" class="wp-image-614"></figure>
 
 Notice how Fox portrays immigration as a "crisis", and the flow of migrants as a "surge" which is "swelling".
 
@@ -79,7 +79,7 @@ The headline does not describe the events impartially. It doesn't provide any nu
 
 While the practice has probably been around as long as language, it became known as "Russell's conjugation" after philosopher [Bertrand Russell](https://plato.stanford.edu/entries/russell/) explained the concept in detail in a 1948 episode of the BBC Radio show [The Brains Trust](https://www.bbc.co.uk/programmes/p0274ytz).
 
-<figure class="wp-block-image aligncenter size-medium"><img src="/images/posts/what-is-russell-conjugation/bertrand_russell-262x300.jpeg" alt="Bertrand Russell, who Russell Conjugation is named after" class="wp-image-426"><figcaption class="wp-element-caption">Bertrand Russell</figcaption></figure>
+<figure class="wp-block-image aligncenter size-medium"><img loading="lazy" decoding="async" src="/images/posts/what-is-russell-conjugation/bertrand_russell-262x300.jpeg" alt="Bertrand Russell, who Russell Conjugation is named after" class="wp-image-426"><figcaption class="wp-element-caption">Bertrand Russell</figcaption></figure>
 
 Russel used the following examples to describe the phenomenon:
 

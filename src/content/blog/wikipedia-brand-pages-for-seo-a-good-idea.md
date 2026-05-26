@@ -13,7 +13,7 @@ I’ve been asked a couple of times by clients whether they should make a Wikipe
 
 Like most SEO questions, the answer is _it depends_. But generally speaking, **I think Wikipedia pages are worth focusing some time on**, as long as you’re aware of the upsides and downsides.
 
-<figure class="aligncenter size-large is-resized"><img src="/images/posts/wikipedia-brand-pages-for-seo-a-good-idea/wikipedia-brand-pages-for-seo-pros-cons.png" alt="List of pros and cons related to SEO of making a Wikipedia page for your brand." class="wp-image-568" width="464" height="376"></figure>
+<figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="/images/posts/wikipedia-brand-pages-for-seo-a-good-idea/wikipedia-brand-pages-for-seo-pros-cons.png" alt="List of pros and cons related to SEO of making a Wikipedia page for your brand." class="wp-image-568" width="464" height="376"></figure>
 
 I’ll go into more detail below about each of these Wikipedia page advantages and disadvantages for SEO.
 
@@ -27,13 +27,13 @@ That means your Wikipedia page is likely to rank on page 1 when people search fo
 
 Having a Wikipedia brand page also gives Google a wealth of information to add to their Knowledge Graph. That usually results in a more robust Knowledge Panel, effectively branding the SERP with your logo and company information.
 
-<figure class="aligncenter size-large is-resized"><img src="/images/posts/wikipedia-brand-pages-for-seo-a-good-idea/okta-branded-serp-1024x716.png" alt="Examples of Wikipedia brand page and knowledge panel" class="wp-image-576" width="512" height="358"></figure>
+<figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="/images/posts/wikipedia-brand-pages-for-seo-a-good-idea/okta-branded-serp-1024x716.png" alt="Examples of Wikipedia brand page and knowledge panel" class="wp-image-576" width="512" height="358"></figure>
 
 ### **Possible rankings boost**
 
 Any SEO person will tell you that earning [backlinks](https://tomdehnel.com/seo-value-of-backlinks/) from authoritative websites is one of the best ways to improve your site’s rankings. That’s because links from trusted websites are one of the strongest ranking signals used by Google’s Search algorithms.
 
-<figure class="aligncenter size-large is-resized"><img src="/images/posts/wikipedia-brand-pages-for-seo-a-good-idea/whats-a-backlink.png" alt="Diagram of a site linking to another site. The site receiving the link is getting a backlink. Google sees backlinks as &quot;votes of confidence&quot; in your website." class="wp-image-569" width="472" height="306"></figure>
+<figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="/images/posts/wikipedia-brand-pages-for-seo-a-good-idea/whats-a-backlink.png" alt="Diagram of a site linking to another site. The site receiving the link is getting a backlink. Google sees backlinks as &quot;votes of confidence&quot; in your website." class="wp-image-569" width="472" height="306"></figure>
 
 Wikipedia is one of the most trusted websites on the internet. So backlinks from Wikipedia should be super valuable, right? 
 

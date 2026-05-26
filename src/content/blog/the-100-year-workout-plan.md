@@ -57,7 +57,7 @@ Because if you really want to experience the benefits of exercise, that’s exac
 
 A hundred years is a long time. But you might actually live that long. The [oldest human whose age was well-documented](https://en.wikipedia.org/wiki/Jeanne_Calment) lived to be over 122.
 
-<figure class="aligncenter size-large"><img src="/images/posts/the-100-year-workout-plan/average-us-life-expectancy-uk-cn.png" alt="" class="wp-image-493"><figcaption><a href="https://www.google.com/search?q=united+states+life+expectancy">Google</a></figcaption></figure>
+<figure class="aligncenter size-large"><img loading="lazy" decoding="async" src="/images/posts/the-100-year-workout-plan/average-us-life-expectancy-uk-cn.png" alt="" class="wp-image-493"><figcaption><a href="https://www.google.com/search?q=united+states+life+expectancy">Google</a></figcaption></figure>
 
 But even if your life is [average length](https://www.cdc.gov/nchs/fastats/life-expectancy.htm), I think you’ll agree that it’s better to be healthy and happy for the majority of it. So you’ll need to exercise, not just this month, or year. But for the long term.
 

@@ -451,6 +451,10 @@ const processItem = async (it) => {
   // Trim excess blank lines
   body = body.replace(/\n{3,}/g, "\n\n").trim();
 
+  // Add loading="lazy" + decoding="async" to inline <img> tags that lack them.
+  // (Hero images are rendered by the layout with loading=eager fetchpriority=high.)
+  body = body.replace(/<img(?![^>]*\bloading=)/g, '<img loading="lazy" decoding="async"');
+
   // ---- Excerpt ----
   let excerpt = wpExcerpt || firstParagraphExcerpt(body);
   if (excerpt && excerpt.length > 280) excerpt = excerpt.slice(0, 277).trimEnd() + "…";

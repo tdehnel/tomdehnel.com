@@ -52,7 +52,7 @@ The real benefit of creating content regularly is that it ensures you’ll be ge
 
 **But there’s a risk here**. Many SEO companies will do “keyword research” to identify topics to write about. That means they’ll just look at the most popular keywords containing your product or service, and use that as a content-creation checklist.  
 
-<figure class="aligncenter is-resized"><img src="/images/posts/monthly-seo-packages-how-to-get-the-most-for-your-budget/iguana-cage-keywords.png" alt="Keyword research results for &quot;iguana cages&quot; with search volume for each term" class="wp-image-279" width="377" height="241"><figcaption>Keyword research results with search volume for each term</figcaption></figure>
+<figure class="aligncenter is-resized"><img loading="lazy" decoding="async" src="/images/posts/monthly-seo-packages-how-to-get-the-most-for-your-budget/iguana-cage-keywords.png" alt="Keyword research results for &quot;iguana cages&quot; with search volume for each term" class="wp-image-279" width="377" height="241"><figcaption>Keyword research results with search volume for each term</figcaption></figure>
 
 The issue here is they might recommend writing a bunch of articles that don’t really fit together. Or worse, articles that compete against each other in search. Would you rather have 2 mediocre articles that rank on page 2? Or 1 great article on the first page? I know what I’d choose.
 
@@ -101,7 +101,7 @@ If your business mostly serves customers in a specific geographic area, you’ll
 
 This is what shows up on the map search result (in both Google Search and Google Maps). Having your MyBusiness listing completed properly is table stakes for showing up in local searches. Make sure your monthly SEO package includes optimization of this listing. 
 
-<figure class="aligncenter"><img src="/images/posts/monthly-seo-packages-how-to-get-the-most-for-your-budget/google-mybusiness-listing-858x1024.png" alt="Example Google MyBusiness Listing for &quot;iguana cages near me&quot;" class="wp-image-280"><figcaption>Example Google MyBusiness Listing</figcaption></figure>
+<figure class="aligncenter"><img loading="lazy" decoding="async" src="/images/posts/monthly-seo-packages-how-to-get-the-most-for-your-budget/google-mybusiness-listing-858x1024.png" alt="Example Google MyBusiness Listing for &quot;iguana cages near me&quot;" class="wp-image-280"><figcaption>Example Google MyBusiness Listing</figcaption></figure>
 
 To get an idea of what a good MyBusiness listing looks like, do a search on Google maps for a business like yours in a big city near you.
 
