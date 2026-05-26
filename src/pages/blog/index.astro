@@ -1,0 +1,64 @@
+---
+import { getCollection } from "astro:content";
+import BaseHead from "../../components/BaseHead.astro";
+import Footer from "../../components/Footer.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
+import Header from "../../components/Header.astro";
+import { BLOG_PAGE_SIZE, SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+
+// Page 1 of the paginated blog index. Pages 2+ are served by /blog/page/[page]/.
+const allPosts = (
+  await getCollection("blog", ({ data }) => import.meta.env.DEV || !data.draft)
+).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const posts = allPosts.slice(0, BLOG_PAGE_SIZE);
+const totalPages = Math.max(1, Math.ceil(allPosts.length / BLOG_PAGE_SIZE));
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`Blog — ${SITE_TITLE}`}
+      description={SITE_DESCRIPTION}
+    />
+    <style>
+      main { padding-top: 1.5em; }
+      h1 { font-size: 2em; margin-bottom: 1em; }
+      ul.posts { list-style: none; padding: 0; margin: 0; }
+      ul.posts li { margin: 0 0 1.75em 0; }
+      .post-title { font-size: 1.25em; margin: 0 0 0.15em 0; }
+      .post-title a { color: rgb(var(--black)); text-decoration: none; }
+      .post-title a:hover { color: var(--accent); }
+      .post-date { margin: 0 0 0.25em 0; color: rgb(var(--gray)); font-size: 0.9em; }
+      .post-excerpt { margin: 0; color: rgb(var(--gray-dark)); }
+      nav.pagination { display: flex; justify-content: space-between; margin-top: 2em; }
+      nav.pagination a { color: var(--accent); }
+      nav.pagination span { color: rgb(var(--gray)); }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Blog</h1>
+      <ul class="posts">
+        {posts.map((post) => (
+          <li>
+            <h2 class="post-title">
+              <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+            </h2>
+            <p class="post-date"><FormattedDate date={post.data.date} /></p>
+            {post.data.excerpt && <p class="post-excerpt">{post.data.excerpt}</p>}
+          </li>
+        ))}
+      </ul>
+      {totalPages > 1 && (
+        <nav class="pagination" aria-label="Pagination">
+          <span>Page 1 of {totalPages}</span>
+          <a href="/blog/page/2/">Older posts &rarr;</a>
+        </nav>
+      )}
+    </main>
+    <Footer />
+  </body>
+</html>

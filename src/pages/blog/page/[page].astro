@@ -1,0 +1,81 @@
+---
+import { getCollection } from "astro:content";
+import BaseHead from "../../../components/BaseHead.astro";
+import Footer from "../../../components/Footer.astro";
+import FormattedDate from "../../../components/FormattedDate.astro";
+import Header from "../../../components/Header.astro";
+import { BLOG_PAGE_SIZE, SITE_DESCRIPTION, SITE_TITLE } from "../../../consts";
+
+export async function getStaticPaths() {
+  const allPosts = (
+    await getCollection("blog", ({ data }) => import.meta.env.DEV || !data.draft)
+  ).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+  const totalPages = Math.max(1, Math.ceil(allPosts.length / BLOG_PAGE_SIZE));
+  // Page 1 is served by /blog/index.astro — generate only 2..N here.
+  const paths = [];
+  for (let p = 2; p <= totalPages; p++) {
+    const start = (p - 1) * BLOG_PAGE_SIZE;
+    paths.push({
+      params: { page: String(p) },
+      props: {
+        page: p,
+        totalPages,
+        posts: allPosts.slice(start, start + BLOG_PAGE_SIZE),
+      },
+    });
+  }
+  return paths;
+}
+
+const { page, totalPages, posts } = Astro.props;
+const prev = page === 2 ? "/blog/" : `/blog/page/${page - 1}/`;
+const next = page < totalPages ? `/blog/page/${page + 1}/` : null;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`Blog — page ${page} — ${SITE_TITLE}`}
+      description={SITE_DESCRIPTION}
+    />
+    <style>
+      main { padding-top: 1.5em; }
+      h1 { font-size: 2em; margin-bottom: 1em; }
+      ul.posts { list-style: none; padding: 0; margin: 0; }
+      ul.posts li { margin: 0 0 1.75em 0; }
+      .post-title { font-size: 1.25em; margin: 0 0 0.15em 0; }
+      .post-title a { color: rgb(var(--black)); text-decoration: none; }
+      .post-title a:hover { color: var(--accent); }
+      .post-date { margin: 0 0 0.25em 0; color: rgb(var(--gray)); font-size: 0.9em; }
+      .post-excerpt { margin: 0; color: rgb(var(--gray-dark)); }
+      nav.pagination { display: flex; justify-content: space-between; margin-top: 2em; }
+      nav.pagination a { color: var(--accent); }
+      nav.pagination span { color: rgb(var(--gray)); }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Blog — page {page}</h1>
+      <ul class="posts">
+        {posts.map((post) => (
+          <li>
+            <h2 class="post-title">
+              <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+            </h2>
+            <p class="post-date"><FormattedDate date={post.data.date} /></p>
+            {post.data.excerpt && <p class="post-excerpt">{post.data.excerpt}</p>}
+          </li>
+        ))}
+      </ul>
+      <nav class="pagination" aria-label="Pagination">
+        <a href={prev}>&larr; Newer posts</a>
+        <span>Page {page} of {totalPages}</span>
+        {next ? <a href={next}>Older posts &rarr;</a> : <span />}
+      </nav>
+    </main>
+    <Footer />
+  </body>
+</html>
