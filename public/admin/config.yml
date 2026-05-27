@@ -7,7 +7,7 @@
 
 backend:
   name: github
-  repo: tomdehnel/tomdehnel.com
+  repo: tdehnel/tomdehnel.com
   branch: main
   base_url: https://tomdehnel.com
   auth_endpoint: /api/auth

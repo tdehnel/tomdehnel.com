@@ -138,17 +138,17 @@ These have to happen once, in this order. The first three were not yet done at t
 
 ### 1. Create the GitHub repo
 
-The repo is configured (in `public/admin/config.yml`) as `tomdehnel/tomdehnel.com`, public, branch `main`. Create that repo on GitHub (empty, no README), then:
+The repo is configured (in `public/admin/config.yml`) as `tdehnel/tomdehnel.com`, public, branch `main`. Create that repo on GitHub (empty, no README), then:
 
 ```bash
-git remote add origin git@github.com:tomdehnel/tomdehnel.com.git
+git remote add origin git@github.com:tdehnel/tomdehnel.com.git
 git push -u origin main
 ```
 
 ### 2. Connect Cloudflare Pages
 
 1. Cloudflare dashboard → Workers & Pages → Create application → Pages → Connect to Git.
-2. Pick the `tomdehnel/tomdehnel.com` repo.
+2. Pick the `tdehnel/tomdehnel.com` repo.
 3. Build settings (most are auto-detected):
    - **Framework preset:** Astro
    - **Build command:** `npm run build`
