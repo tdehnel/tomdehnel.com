@@ -76,26 +76,47 @@ function renderResult(status: "success" | "error", payload: unknown) {
   <p id="status">${status === "success" ? "Authorization complete. You can close this window." : "Authorization failed. You can close this window."}</p>
   <script>
     (function () {
-      var MESSAGE = ${JSON.stringify(message)};
-      function send() {
+      // Decap CMS OAuth popup handshake.
+      // Protocol (per netlify-cms-lib-auth, still used by Decap CMS v3):
+      //   1. Popup sends "authorizing:github" to opener.
+      //   2. Opener echoes "authorizing:github" back to popup (the handshake).
+      //   3. Popup sends "authorization:github:success:<json>" with the token.
+      //   4. Opener consumes token, popup closes.
+      //
+      // Skipping step 1 (which the previous version did) means Decap never
+      // wires up its listener for the success message and the login silently
+      // fails — popup closes but the editor never loads.
+      var RESULT = ${JSON.stringify(message)};
+      var handshakeReceived = false;
+      function post(msg) {
         if (window.opener && !window.opener.closed) {
-          window.opener.postMessage(MESSAGE, "*");
+          window.opener.postMessage(msg, "*");
         }
       }
-      // Decap sends "authorizing:github" to us; reply with the result when it does.
       window.addEventListener("message", function (e) {
         if (typeof e.data === "string" && e.data.indexOf("authorizing:github") === 0) {
-          send();
+          handshakeReceived = true;
+          post(RESULT);
         }
       });
-      // Send once immediately in case Decap is already listening.
-      send();
-      // And once more after a short delay as belt-and-braces.
-      setTimeout(send, 300);
-      // Auto-close after a moment so the user doesn't have to.
-      setTimeout(function () {
-        try { window.close(); } catch (e) {}
-      }, 1500);
+      // Step 1: announce readiness to the opener.
+      post("authorizing:github");
+      // Re-announce a couple of times in case the opener hasn't attached its
+      // listener yet (mobile Safari is slower than desktop).
+      var retries = 0;
+      var retryId = setInterval(function () {
+        retries++;
+        if (handshakeReceived || retries >= 10) {
+          clearInterval(retryId);
+          // After the result is sent, close the popup so the user lands
+          // back on the editor.
+          setTimeout(function () {
+            try { window.close(); } catch (e) {}
+          }, 800);
+          return;
+        }
+        post("authorizing:github");
+      }, 250);
     })();
   </script>
 </body>
