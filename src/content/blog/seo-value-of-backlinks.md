@@ -18,13 +18,13 @@ This guide is for people who want to know **why** links (aka backlinks) are an i
 
 I’ll start with a brief history of search engines because I think it adds important context, but free to skip ahead to any section you’d like to learn more about:
 
--   [The History of Search Engines](#history-of-search)
+-   [The History of Search Engines](#the-history-of-search-engines)
 -   [Authority](#authority)
--   [Relevance](#domain-relevance)
+-   [Relevance](#relevance)
 -   [Referral Traffic](#referral-traffic)
 -   [Brand Awareness](#brand-awareness)
--   [Other Link Value Metrics](#other-metrics)
--   [Conclusion](#conclusion)
+-   [Other Link Value Metrics](#other-link-value-metrics)
+-   [A Final Word](#a-final-word)
 
 ## The History of Search Engines
 
@@ -183,7 +183,7 @@ So we can think of Trudeau’s endorsement as high in authority, but _low in rel
 
 Now imagine your food blog gets an endorsement from celebrity chef Gordon Ramsay. Ramsay is a food man through and through. If you haven’t made his [scrambled eggs](https://www.youtube.com/watch?v=PUP7U5vTMM0) recipe yet you’re missing out on one of the simple pleasures of life.
 
-<figure class="aligncenter"><img loading="lazy" decoding="async" src="/images/posts/seo-value-of-backlinks/gordon-ramsay.png" alt="Gordon Ramsay yelling at a contestant on Hell's Kitchen" class="wp-image-223"><figcaption>"Stuffing is what you do with a turkey, not keywords!" <g class="gr_ gr_4 gr-alert gr_gramm gr_inline_cards gr_run_anim Punctuation only-ins replaceWithoutSep" id="4" data-gr-id="4">Yes</g> I know this is a bad joke.</figcaption></figure>
+<figure class="aligncenter"><img loading="lazy" decoding="async" src="/images/posts/seo-value-of-backlinks/gordon-ramsay.png" alt="Gordon Ramsay yelling at a contestant on Hell's Kitchen" class="wp-image-223"><figcaption>"Stuffing is what you do with a turkey, not keywords!" Yes, I know this is a bad joke.</figcaption></figure>
 
 An endorsement from Ramsay to your food blog would be super valuable because Ramsay clearly knows food. This is a great example of a _relevant_ endorsement.
 
@@ -191,7 +191,7 @@ An endorsement from Ramsay to your food blog would be super valuable because Ram
 
 [Lots of SEO practitioners](https://searchengineland.com/relevance-vs-authority-link-value-part-1-274270) have good reason to think Google values links in this way. And although Google won’t confirm it, I’ve gotta go with the crowd on this one.
 
-<figure class="wp-block-embed-twitter aligncenter wp-block-embed is-type-rich is-provider-twitter"><div class="wp-block-embed__wrapper">https://twitter.com/JHTScherck/status/1059110439840169984</div></figure>
+<p><a href="https://twitter.com/JHTScherck/status/1059110439840169984" rel="noopener">View tweet ↗</a></p>
 
 Relevant links can help drive traffic from qualified buyers (more on this later), but I think the best reason to try and get relevant links has more to do with SEO.
 
@@ -274,7 +274,7 @@ But that's a topic for another article.
 
 Did you enjoy this? Follow me on Twitter to get updates when new articles come out. [Follow @tomdehnel](https://twitter.com/tomdehnel?ref_src=twsrc%5Etfw)
 
-  
+## Sources
 
 Web search engines. Retrieved March 2019 from [https://en.wikipedia.org/wiki/Web\_search\_engine](https://en.wikipedia.org/wiki/Web_search_engine)
 
@@ -282,7 +282,7 @@ On the Origins of Google. Retrieved March 2019 from [https://www.nsf.gov/discove
 
 The true story behind Google’s hilarious first name. Retrieved March 2019 from [https://www.businessinsider.com/the-true-story-behind-googles-first-name-backrub-2015-10](https://www.businessinsider.com/the-true-story-behind-googles-first-name-backrub-2015-10)
 
-How Search algorithms work. Retrieved March 2019 from [https://www.google.com/search/howsearchworks/algorithms/](_wp_link_placeholder)
+How Search algorithms work. Retrieved March 2019 from [https://www.google.com/search/howsearchworks/algorithms/](https://www.google.com/search/howsearchworks/algorithms/)
 
 Google's Paul Haahr: We Don't Fully Understand RankBrain. Retrieved March 2019 from [https://www.seroundtable.com/google-dont-understand-rankbrain-21744.html](https://www.seroundtable.com/google-dont-understand-rankbrain-21744.html)
 

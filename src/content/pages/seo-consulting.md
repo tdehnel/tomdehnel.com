@@ -21,9 +21,7 @@ An SEO consultant can provide a custom SEO solution for your business. So why me
 
 Together, we'll focus our efforts on SEO best practices by rapidly reviewing your site and putting together a hit list of items that will generate results for you.
 
-I've done this for lots of companies, including:
-
-\` -->
+I've done this for lots of companies — including Okta, Current, Amplitude, Asurion, and many smaller brands (a few quotes below).
 
 If you talk to other SEO consultants or SEO agencies about what makes them different, they'll usually say it's their "process", or they do a 1000+ item SEO audit, or something else that's all about them.
 

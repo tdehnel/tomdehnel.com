@@ -91,7 +91,7 @@ Russel used the following examples to describe the phenomenon:
 
 More recently, Eric Weinstein has given popularity to Russell Conjugations. He uses them to identify and critique modern politicized speech:
 
-<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter"><div class="wp-block-embed__wrapper">https://twitter.com/ericrweinstein/status/1164611696226254848?lang=en</div></figure>
+<p><a href="https://twitter.com/ericrweinstein/status/1164611696226254848?lang=en" rel="noopener">View tweet ↗</a></p>
 
 Weinstein's tweet illustrates that the common term "political correctness" is actually a negative Russell Conjugate of the term "respectful speech". They both mean the same thing. But to call a statement "politically correct" is to cast doubts on the motives of the speaker. It implies they are using certain language for political approval, instead of out of respect for another person or group.
 

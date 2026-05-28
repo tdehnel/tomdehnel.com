@@ -223,7 +223,7 @@ It’s not a utopia; it’s just our best shot at a future with a positive techn
 
 This might be the most common refrain of anticapitalists. They imagine themselves as able to pursue some full-time creative activity which is currently not possible under capitalism.
 
-<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter"><div class="wp-block-embed__wrapper">https://twitter.com/existentialcoms/status/1251671573301391360?lang=en</div></figure>
+<p><a href="https://twitter.com/existentialcoms/status/1251671573301391360?lang=en" rel="noopener">View tweet ↗</a></p>
 
 Some issues with this type of thinking are:
 

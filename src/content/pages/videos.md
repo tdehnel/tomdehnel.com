@@ -7,7 +7,7 @@ original_url: "https://tomdehnel.com/videos/"
 
 It all started with this idea I developed to raise money for charity. I'd run a 15k race with a camera on a selfie stick and sell sponsorships during the video.
 
-<figure class="wp-block-embed-youtube wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">https://youtu.be/jUDKinr5Avs</div></figure>
+<iframe class="youtube-embed" src="https://www.youtube.com/embed/jUDKinr5Avs" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" frameborder="0" style="aspect-ratio:16/9;width:100%;height:auto;border-radius:8px"></iframe>
 
 Even though the [World's Longest Commercial](https://worldslongestcommercial.com/) raised over $7,000 to fight addiction, I was a little disappointed that the video got less than 300 views on YouTube.
 
@@ -19,13 +19,13 @@ I got some advice to focus on the things that I'm naturally good at since that c
 
 Here's the first one I did, which I think is pretty entertaining.
 
-<figure class="wp-block-embed-youtube wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">https://www.youtube.com/watch?v=nNlgXOtZWBE</div></figure>
+<iframe class="youtube-embed" src="https://www.youtube.com/embed/nNlgXOtZWBE" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" frameborder="0" style="aspect-ratio:16/9;width:100%;height:auto;border-radius:8px"></iframe>
 
 I switched gears a bit here when I realized that San Francisco (where I live) is such an interesting part of the world that people might want to know more about it.
 
 That's when I made my most popular video:
 
-<figure class="wp-block-embed-youtube wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">https://youtu.be/-hmnVMVjJTw</div></figure>
+<iframe class="youtube-embed" src="https://www.youtube.com/embed/-hmnVMVjJTw" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" frameborder="0" style="aspect-ratio:16/9;width:100%;height:auto;border-radius:8px"></iframe>
 
 This video popped. It got picked up by a couple of San Francisco publications which helped it get over 12,000 views in just a couple of days. Even cooler is that people engaged with it (commented and liked/disliked) enough that the video started to rank #1 when you search for "san francisco" on YouTube.
 

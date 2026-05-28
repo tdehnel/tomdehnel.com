@@ -7,7 +7,6 @@ original_url: "https://tomdehnel.com/the-big-hit-sample-email/"
 
 Rise, Shine, and Expand Your Mind  |   View this email in your browser
 
-<figure class="aligncenter"><img loading="lazy" decoding="async" src="https://docs.google.com/drawings/u/0/d/shetuSG79iRhBOIHSw-DPdw/image?w=260&amp;h=99&amp;rev=1&amp;ac=1&amp;parent=1xEuk0n1_j72w-0CBdVfUdgFh-jb5tgZt39xX1oMiXdc" alt=""></figure>
 
 Thursday, June 10th, 2020
 
@@ -38,7 +37,6 @@ With a perfect blend of Pure CBD, MCT coconut oil perfectly encapsulated in a ph
 
 #### **_WHAT WE’RE LISTENING TO_**
 
-<figure class="aligncenter"><img loading="lazy" decoding="async" src="https://docs.google.com/drawings/u/0/d/ssqItCBgZb1oY1SNc9gcjRA/image?w=454&amp;h=303&amp;rev=1&amp;ac=1&amp;parent=1xEuk0n1_j72w-0CBdVfUdgFh-jb5tgZt39xX1oMiXdc" alt=""></figure>
 
 ## **THE ALBUM LEAF – ESSEX**
 
@@ -58,7 +56,6 @@ Their first public marijuana sales were a completely staged, made-for-TV perform
 
 Share The Big Hit with your friends. They’ll thank you for it. Just copy/paste the custom link below so we can count your referrals here at Big Hit HQ. We’ll reward your generosity with the official Big Hit T-shirt!
 
-<figure class="aligncenter"><img loading="lazy" decoding="async" src="https://docs.google.com/drawings/u/0/d/sX_SBoxLzwaoFJys4XZp1-A/image?w=295&amp;h=291&amp;rev=1&amp;ac=1&amp;parent=1xEuk0n1_j72w-0CBdVfUdgFh-jb5tgZt39xX1oMiXdc" alt=""></figure>
 
 [https://bighit.club/R/Aw990t](https://bighit.club/R/Aw990t)
 

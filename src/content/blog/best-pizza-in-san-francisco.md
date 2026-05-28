@@ -20,11 +20,11 @@ In 2019, I made video about San Francisco that went viral. I made some bold clai
 
 **Here's [the original video](https://youtu.be/-hmnVMVjJTw) (Over 180,000 views)**:
 
-<figure class="wp-block-embed-youtube wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">https://www.youtube.com/watch?v=-hmnVMVjJTw</div></figure>
+<iframe class="youtube-embed" src="https://www.youtube.com/embed/-hmnVMVjJTw" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" frameborder="0" style="aspect-ratio:16/9;width:100%;height:auto;border-radius:8px"></iframe>
 
 Some local San Francisco publications (SFist, Broke Ass Stuart) got wind of the video, and it earned a ton of attention (including a lot of crazy comments from crusty SF locals).
 
-<figure class="wp-block-embed-wordpress wp-block-embed is-type-wp-embed is-provider-broke-ass-stuart-039-s-website"><div class="wp-block-embed__wrapper">https://brokeassstuart.com/2019/08/23/dude-whos-lived-in-san-francisco-for-1-year-makes-video-about-what-sf-is-really-like/</div></figure>
+<p><a href="https://brokeassstuart.com/2019/08/23/dude-whos-lived-in-san-francisco-for-1-year-makes-video-about-what-sf-is-really-like/" rel="noopener">https://brokeassstuart.com/2019/08/23/dude-whos-lived-in-san-francisco-for-1-year-makes-video-about-what-sf-is-really-like/ ↗</a></p>
 
 Overall, the reception was really positive, but **people really took issue with my claim that you can't get a decent slice of pizza in SF**. Man, people really love their pizza. Lots of viewers chimed in to say I didn’t go to visit their favorite pizza places, and that I missed some great ones.
 
@@ -92,4 +92,4 @@ There are more graphs, as well as the full judge-by-judge scoring, available in 
 
 And here’s the finished video...enjoy!  
 
-<figure class="wp-block-embed-youtube wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">https://youtu.be/Dw8hIuHmu8I</div></figure>
+<iframe class="youtube-embed" src="https://www.youtube.com/embed/Dw8hIuHmu8I" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" frameborder="0" style="aspect-ratio:16/9;width:100%;height:auto;border-radius:8px"></iframe>

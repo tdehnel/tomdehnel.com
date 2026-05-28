@@ -38,34 +38,41 @@ WordPress-specific scaffolding intentionally dropped:
 
 ## Per-post manual cleanup
 
-Items with `<!-- TODO -->` markers in the markdown that warrant a human pass:
+A second pass cleaned up most of what the migration script flagged. Notes below are what's left vs. what's been done.
 
-### `src/content/pages/seo-consulting.md` — Tom Dehnel - SEO Consultant
-- Logo carousel shortcode dropped (`[logocarousel id="631"]`). To restore: drop a row of `<img>` tags in place of the TODO marker, or remove the section entirely.
+### `src/content/pages/seo-consulting.md` — Tom Dehnel - SEO Consultant — ✅ cleaned
+- Logo carousel shortcode dropped (`[logocarousel id="631"]`). Replaced the dangling list intro with a one-line callout naming a few clients pulled from the testimonials (Okta, Current, Amplitude, Asurion). Edit it any time if you want a different list.
 
-### `src/content/pages/the-big-hit-sample-email.md` — The Big Hit
-- 3 images failed to download (Google Docs drawing URLs, HTTP 401). Either replace with screenshots or remove the broken refs.
+### `src/content/pages/the-big-hit-sample-email.md` — The Big Hit — ✅ cleaned
+- 3 Google Docs drawing URLs returning HTTP 401. Removed the broken `<figure>` blocks entirely. The page is a 2020 newsletter sample so the missing header graphic isn't material.
 
-### `src/content/blog/seo-value-of-backlinks.md` — SEO Value of Backlinks
-- Shortcodes Ultimate accordion/box/spoiler wrappers stripped — inner content kept inline. Sections are now flat headings instead of collapsible.
-- Inline `<script>` tag stripped (was 88 chars; likely a SmartSlider or social-share snippet).
-- Heaviest post in the migration; worth a full read-through.
+### `src/content/blog/seo-value-of-backlinks.md` — SEO Value of Backlinks — ✅ cleaned
+- Stripped Shortcodes Ultimate accordion/box/spoiler wrappers — the "Sources" section is now a flat list at the bottom with an explicit `## Sources` heading.
+- Inline `<script>` tag stripped (left as an HTML comment by the migrator; no action needed).
+- TOC anchor links updated to match Astro's auto-generated heading IDs (`#the-history-of-search-engines`, `#relevance`, `#other-link-value-metrics`, `#a-final-word`).
+- Removed stray Grammarly `<g class="gr_...">` wrapper in one figcaption.
+- Fixed broken `_wp_link_placeholder` href in the Google Search Algorithms reference.
+- Twitter oEmbed converted to a plain "View tweet" link.
 
-### `src/content/blog/best-pizza-in-san-francisco.md`
-- YouTube and WordPress oEmbed blocks — preserved as raw `<iframe>`/HTML. May need a manual check.
+### `src/content/blog/best-pizza-in-san-francisco.md` — ✅ cleaned
+- 2 YouTube oEmbeds converted to lazy `<iframe>` players (16:9 aspect, no JS).
+- WordPress oEmbed (brokeassstuart.com) converted to a plain link — there's no static way to oEmbed a third-party WordPress post.
 
-### `src/content/pages/videos.md`
-- A YouTube embed — preserved as raw HTML.
+### `src/content/pages/videos.md` — ✅ cleaned
+- 3 YouTube oEmbeds converted to lazy `<iframe>` players.
 
-### Posts with external images
-These posts reference images hosted on third-party domains (`lh*.googleusercontent.com`, `cdn-images-1.medium.com`, `c1.sfdcstatic.com`). The migration tried to download them; some succeeded, others may break at any time. Re-host locally if you care:
+### Twitter embeds — ✅ cleaned
+Converted to plain "View tweet" links on:
+- `src/content/blog/seo-value-of-backlinks.md`
+- `src/content/blog/crushing-the-myth-of-late-stage-capitalism.md`
+- `src/content/blog/what-is-russell-conjugation.md`
+
+### Posts with external images — ⚠️ no action needed, but worth knowing
+These posts originally referenced images on third-party domains (`lh*.googleusercontent.com`, `cdn-images-1.medium.com`, `c1.sfdcstatic.com`). The migration downloaded all of them successfully (no `broken/external` markers remain in the content), so they're now local. If any of the upstream sources changed before download, the local files will be stale rather than 404 — visual spot-check welcome:
 - `how-to-fix-broken-backlinks`
 - `time-management-or-how-to-control-your-destiny-by-ignoring-slack-sometimes`
 - `what-if-leadgen-were-more-like-a-conversation`
 - `seo-value-of-backlinks`
-
-### Heading anchors
-The longest posts (e.g. `seo-value-of-backlinks`) had table-of-contents links pointing at WordPress-injected heading IDs like `#history-of-search`. After conversion the IDs are now Astro-default-slugified versions (`#the-history-of-search-engines`). The TOC links won't all hit their targets. Fix by either updating the links to match the new IDs, or by adding explicit anchors.
 
 ## Drafts archived (draft: true)
 
