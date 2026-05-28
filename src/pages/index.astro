@@ -1,14 +1,22 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import Header from "../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
+// The home page intro is editable in the CMS at /admin (Site → Home page).
+const home = await getEntry("site", "home");
+if (!home) {
+  throw new Error("Missing src/content/site/home.md — the home page intro entry.");
+}
+const { Content: HomeIntro } = await render(home);
+const recentCount = home.data.recent_posts_count;
+
 const posts = (await getCollection("blog", ({ data }) => import.meta.env.DEV || !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, 5);
+  .slice(0, recentCount);
 ---
 
 <!doctype html>
@@ -23,7 +31,7 @@ const posts = (await getCollection("blog", ({ data }) => import.meta.env.DEV || 
       .intro h1 {
         margin-bottom: 0.5em;
       }
-      .intro p {
+      .intro :global(p) {
         font-size: 1.1em;
         color: rgb(var(--gray-dark));
       }
@@ -64,30 +72,26 @@ const posts = (await getCollection("blog", ({ data }) => import.meta.env.DEV || 
     <Header />
     <main>
       <section class="intro">
-        <h1>Tom Dehnel</h1>
-        <p>
-          I'm an SEO consultant based in San Francisco and South Florida. I write here
-          about SEO, AI search, marketing, philosophy, and whatever else has my attention.
-        </p>
-        <p>
-          More on the <a href="/about/">about page</a>.
-        </p>
+        <h1>{home.data.heading}</h1>
+        <HomeIntro />
       </section>
 
-      <section class="recent">
-        <h2>Recent posts</h2>
-        <ul>
-          {posts.map((post) => (
-            <li>
-              <h3 class="post-title">
-                <a href={`/blog/${post.id}/`}>{post.data.title}</a>
-              </h3>
-              <p class="post-date"><FormattedDate date={post.data.date} /></p>
-            </li>
-          ))}
-        </ul>
-        <p class="more"><a href="/blog/">All posts &rarr;</a></p>
-      </section>
+      {recentCount > 0 && (
+        <section class="recent">
+          <h2>Recent posts</h2>
+          <ul>
+            {posts.map((post) => (
+              <li>
+                <h3 class="post-title">
+                  <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+                </h3>
+                <p class="post-date"><FormattedDate date={post.data.date} /></p>
+              </li>
+            ))}
+          </ul>
+          <p class="more"><a href="/blog/">All posts &rarr;</a></p>
+        </section>
+      )}
     </main>
     <Footer />
   </body>

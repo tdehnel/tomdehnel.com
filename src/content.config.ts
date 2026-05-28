@@ -29,4 +29,15 @@ const pages = defineCollection({
     }),
 });
 
-export const collections = { blog, pages };
+// Single-entry collection for site-level editable content (currently just the home page intro).
+// Add more files here (e.g., footer.md) if you want them editable in the CMS too.
+const site = defineCollection({
+  loader: glob({ base: "./src/content/site", pattern: "**/*.{md,mdx}" }),
+  schema: () =>
+    z.object({
+      heading: z.string(),
+      recent_posts_count: z.number().int().min(0).max(50).default(5),
+    }),
+});
+
+export const collections = { blog, pages, site };

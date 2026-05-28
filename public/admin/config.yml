@@ -23,6 +23,33 @@ public_folder: /images/uploads
 # display_url: https://tomdehnel.com
 
 collections:
+  # Single-file collection for site-level editable content. Add more entries
+  # under `files:` if you want to expose other singletons in the CMS (e.g.,
+  # a footer note, a global announcement banner, etc.).
+  - name: site
+    label: Site
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: home
+        label: Home page
+        file: src/content/site/home.md
+        format: frontmatter
+        extension: md
+        fields:
+          - { name: heading, label: Headline (H1), widget: string, hint: "Big title at the top of the home page." }
+          - {
+              name: recent_posts_count,
+              label: "Number of recent posts to show",
+              widget: number,
+              default: 5,
+              min: 0,
+              max: 50,
+              value_type: int
+            }
+          - { name: body, label: Intro paragraphs, widget: markdown, hint: "Markdown. Renders right under the headline." }
+
   - name: pages
     label: Pages
     label_singular: Page
