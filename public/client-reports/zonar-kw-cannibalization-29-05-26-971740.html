@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Keyword Cannibalization Report — Zonar</title>
+  <style>
+    :root {
+      --ink: #1a2233;
+      --muted: #5b6678;
+      --line: #e4e8ef;
+      --accent: #2337ff;
+      --bg: #f6f8fb;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.55;
+      font-size: 16px;
+    }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 48px 24px 64px; }
+    header.report-head {
+      border-bottom: 3px solid var(--accent);
+      padding-bottom: 20px;
+      margin-bottom: 28px;
+    }
+    header.report-head .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    header.report-head h1 { font-size: 28px; margin: 6px 0 4px; line-height: 1.2; }
+    header.report-head .sub { color: var(--muted); font-size: 14px; }
+    section.summary {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 22px 24px;
+      margin-bottom: 28px;
+    }
+    section.summary h2 { font-size: 16px; margin: 0 0 8px; }
+    section.summary p { margin: 0 0 14px; color: #2c3547; }
+    .stats { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+    .stat {
+      flex: 1 1 120px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .stat .n { font-size: 22px; font-weight: 700; }
+    .stat .l { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+    article.scenario {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 22px 24px;
+      margin-bottom: 18px;
+    }
+    article.scenario h3 { font-size: 18px; margin: 0 0 4px; }
+    article.scenario h3 .q { word-break: break-word; }
+    .meta { color: var(--muted); font-size: 13px; margin: 0 0 14px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 14px; }
+    th { text-align: left; color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--line); padding: 6px 8px; }
+    td { padding: 7px 8px; border-bottom: 1px solid #f0f3f8; vertical-align: top; }
+    td.num, th.num { text-align: right; white-space: nowrap; }
+    td a { color: var(--accent); text-decoration: none; word-break: break-all; }
+    td a:hover { text-decoration: underline; }
+    .recommendation {
+      background: var(--bg);
+      border-left: 3px solid var(--accent);
+      border-radius: 6px;
+      padding: 12px 14px;
+    }
+    .recommendation .label {
+      font-size: 11px; text-transform: uppercase; letter-spacing: .06em;
+      color: var(--muted); font-weight: 700; margin-bottom: 4px;
+    }
+    .recommendation p { margin: 0; white-space: pre-wrap; }
+    .keywords { margin: 0 0 14px; }
+    .keywords .label {
+      font-size: 11px; text-transform: uppercase; letter-spacing: .06em;
+      color: var(--muted); font-weight: 700; margin-bottom: 4px;
+    }
+    .keywords ul { margin: 0; padding-left: 18px; }
+    .keywords li { font-size: 13px; color: #2c3547; margin: 2px 0; }
+    footer.report-foot {
+      margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--line);
+      color: var(--muted); font-size: 13px;
+    }
+    @media print {
+      body { background: #fff; }
+      article.scenario, section.summary { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="report-head">
+      <div class="eyebrow">Keyword Cannibalization Report</div>
+      <h1>Zonar</h1>
+      <div class="sub">29 May 2026</div>
+    </header>
+
+    <section class="summary">
+      <h2>Executive summary</h2>
+      <p>
+        Keyword cannibalization happens when more than one page on your site competes for the
+        same Google search, splitting clicks and ranking signals between URLs that should be
+        working together. This dilutes authority and can hold back the page best suited to win.
+        Below are the scenarios we recommend addressing, with a specific action for each.
+      </p>
+      <div class="stats">
+        <div class="stat"><div class="n">2</div><div class="l">Scenarios</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">Clicks affected</div></div>
+        <div class="stat"><div class="n">8,746</div><div class="l">Impressions affected</div></div>
+      </div>
+    </section>
+
+    
+      
+      <article class="scenario">
+        <h3>
+          1.
+          
+            <span class="q">&ldquo;california new laws eld compliance&rdquo;</span>
+          
+        </h3>
+        <p class="meta">
+          0 clicks &middot;
+          7,184 impressions
+          &middot; best title/H1 similarity 100%
+        </p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Competing URL</th>
+              <th class="num">Clicks</th>
+              <th class="num">Impr.</th>
+              <th class="num">Pos.</th>
+              <th>Title</th>
+              <th>H1</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td><a href="https://www.zonar.com/articles/california-intrastate-eld-laws/">https://www.zonar.com/articles/california-intrastate-eld-laws/</a></td>
+                <td class="num">0</td>
+                <td class="num">506</td>
+                <td class="num">6.8</td>
+                <td>The California intrastate ELD mandate | Zonar</td>
+                <td>California intrastate ELD facts, exemptions and help (oh my)</td>
+              </tr>
+            
+              <tr>
+                <td><a href="https://www.zonar.com/eld">https://www.zonar.com/eld</a></td>
+                <td class="num">0</td>
+                <td class="num">92</td>
+                <td class="num">7.2</td>
+                <td>ELD Solutions and ELD Mandate Facts | Zonar Systems</td>
+                <td>Know the facts about HoS and the ELD mandate.</td>
+              </tr>
+            
+              <tr>
+                <td><a href="https://www.zonar.com/eld/">https://www.zonar.com/eld/</a></td>
+                <td class="num">0</td>
+                <td class="num">6278</td>
+                <td class="num">11.1</td>
+                <td>ELD Solutions and ELD Mandate Facts | Zonar Systems</td>
+                <td>Know the facts about HoS and the ELD mandate.</td>
+              </tr>
+            
+              <tr>
+                <td><a href="https://www.zonar.com/webinars/get-ahead-of-california-eld-regulations/">https://www.zonar.com/webinars/get-ahead-of-california-eld-regulations/</a></td>
+                <td class="num">0</td>
+                <td class="num">308</td>
+                <td class="num">10.9</td>
+                <td>New ELD standards in California | Zonar</td>
+                <td>New ELD standards in California</td>
+              </tr>
+            
+          </tbody>
+        </table>
+        <div class="recommendation">
+          <div class="label">Recommendation</div>
+          <p>Noindex the webinar page, link to the webinar from the article as a way to drive traffic to the webinar. The non-trailing backslash version has already been redirected.</p>
+        </div>
+      </article>
+    
+      
+      <article class="scenario">
+        <h3>
+          2.
+          
+            <span class="q">&ldquo;evir&rdquo;</span>
+          
+        </h3>
+        <p class="meta">
+          5 clicks &middot;
+          1,562 impressions
+          &middot; best title/H1 similarity 70%
+        </p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Competing URL</th>
+              <th class="num">Clicks</th>
+              <th class="num">Impr.</th>
+              <th class="num">Pos.</th>
+              <th>Title</th>
+              <th>H1</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td><a href="https://www.zonar.com/solutions/evir-electronic-verified-inspection-reporting/">https://www.zonar.com/solutions/evir-electronic-verified-inspection-reporting/</a></td>
+                <td class="num">5</td>
+                <td class="num">1134</td>
+                <td class="num">3.9</td>
+                <td>EVIR Verified Inspections | Solutions | Zonar</td>
+                <td>Zonar EVIR®</td>
+              </tr>
+            
+              <tr>
+                <td><a href="https://www.zonar.com/articles/where-dvir-and-edvir-stop-evir-ensures-compliance/">https://www.zonar.com/articles/where-dvir-and-edvir-stop-evir-ensures-compliance/</a></td>
+                <td class="num">0</td>
+                <td class="num">163</td>
+                <td class="num">1.4</td>
+                <td>Where DVIR stops, EVIR ensures compliance. | Zonar</td>
+                <td>Where DVIR and eDVIR stop, EVIR® ensures compliance.</td>
+              </tr>
+            
+              <tr>
+                <td><a href="https://www.zonar.com/blog/evir-vs-dvir-and-edvir-a-deep-dive/">https://www.zonar.com/blog/evir-vs-dvir-and-edvir-a-deep-dive/</a></td>
+                <td class="num">0</td>
+                <td class="num">44</td>
+                <td class="num">7.8</td>
+                <td>EVIR vs DVIR and eDVIR – A Deep Dive | Fleet Warrior</td>
+                <td>EVIR vs DVIR and eDVIR – A Deep Dive</td>
+              </tr>
+            
+              <tr>
+                <td><a href="https://www.zonar.com/solutions/how-evir-works/">https://www.zonar.com/solutions/how-evir-works/</a></td>
+                <td class="num">0</td>
+                <td class="num">221</td>
+                <td class="num">6.4</td>
+                <td>How EVIR works | Zonar Systems</td>
+                <td>How Zonar EVIR®works</td>
+              </tr>
+            
+          </tbody>
+        </table>
+        <div class="recommendation">
+          <div class="label">Recommendation</div>
+          <p>Consolidate informational blog posts together, and How EVIR works into the main EVIR solutions page.</p>
+        </div>
+      </article>
+    
+
+    <footer class="report-foot">
+      Prepared by Tom Dehnel &middot; SEO Consultant &middot; 29 May 2026
+    </footer>
+  </div>
+</body>
+</html>
