@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Keyword Cannibalization Report — Belmark</title>
+  <style>
+    :root {
+      --ink: #1a2233;
+      --muted: #5b6678;
+      --line: #e4e8ef;
+      --accent: #2337ff;
+      --bg: #f6f8fb;
+      --clear: #b91c1c;
+      --likely: #b45309;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.55;
+      font-size: 16px;
+    }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 48px 24px 64px; }
+    header.report-head {
+      border-bottom: 3px solid var(--accent);
+      padding-bottom: 20px;
+      margin-bottom: 28px;
+    }
+    header.report-head .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    header.report-head h1 { font-size: 28px; margin: 6px 0 4px; line-height: 1.2; }
+    header.report-head .sub { color: var(--muted); font-size: 14px; }
+    section.summary {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 22px 24px;
+      margin-bottom: 28px;
+    }
+    section.summary h2 { font-size: 16px; margin: 0 0 8px; }
+    section.summary p { margin: 0 0 14px; color: #2c3547; }
+    .stats { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+    .stat {
+      flex: 1 1 120px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .stat .n { font-size: 22px; font-weight: 700; }
+    .stat .l { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+    article.scenario {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 22px 24px;
+      margin-bottom: 18px;
+    }
+    article.scenario h3 { font-size: 18px; margin: 0 0 4px; }
+    article.scenario h3 .q { word-break: break-word; }
+    .meta { color: var(--muted); font-size: 13px; margin: 0 0 14px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 14px; }
+    th { text-align: left; color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--line); padding: 6px 8px; }
+    td { padding: 7px 8px; border-bottom: 1px solid #f0f3f8; vertical-align: top; }
+    td.num, th.num { text-align: right; white-space: nowrap; }
+    td a { color: var(--accent); text-decoration: none; word-break: break-all; }
+    td a:hover { text-decoration: underline; }
+    .recommendation {
+      background: var(--bg);
+      border-left: 3px solid var(--accent);
+      border-radius: 6px;
+      padding: 12px 14px;
+    }
+    .recommendation .label {
+      font-size: 11px; text-transform: uppercase; letter-spacing: .06em;
+      color: var(--muted); font-weight: 700; margin-bottom: 4px;
+    }
+    .recommendation p { margin: 0; white-space: pre-wrap; }
+    .keywords { margin: 0 0 14px; }
+    .keywords .label {
+      font-size: 11px; text-transform: uppercase; letter-spacing: .06em;
+      color: var(--muted); font-weight: 700; margin-bottom: 4px;
+    }
+    .keywords ul { margin: 0; padding-left: 18px; }
+    .keywords li { font-size: 13px; color: #2c3547; margin: 2px 0; }
+    footer.report-foot {
+      margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--line);
+      color: var(--muted); font-size: 13px;
+    }
+    @media print {
+      body { background: #fff; }
+      article.scenario, section.summary { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="report-head">
+      <div class="eyebrow">Keyword Cannibalization Report</div>
+      <h1>Belmark</h1>
+      <div class="sub">29 May 2026</div>
+    </header>
+
+    <section class="summary">
+      <h2>Executive summary</h2>
+      <p>
+        Keyword cannibalization happens when more than one page on your site competes for the
+        same Google search, splitting clicks and ranking signals between URLs that should be
+        working together. This dilutes authority and can hold back the page best suited to win.
+        Below are the scenarios we recommend addressing, with a specific action for each.
+      </p>
+      <div class="stats">
+        <div class="stat"><div class="n">5</div><div class="l">Scenarios</div></div>
+        <div class="stat"><div class="n">0</div><div class="l">Clicks affected</div></div>
+        <div class="stat"><div class="n">3,363</div><div class="l">Impressions affected</div></div>
+      </div>
+    </section>
+
+    
+      
+      <article class="scenario">
+        <h3>
+          1.
+          
+            <span class="q">10 keywords competing for the same URLs</span>
+          
+        </h3>
+        <p class="meta">
+          0 clicks &middot;
+          2,893 impressions
+          &middot; best title/H1 similarity 100%
+        </p>
+        
+          <div class="keywords">
+            <div class="label">Affected keywords (10)</div>
+            <ul>
+              
+                <li>peelable resealable film market — 0 clicks, 614 impressions</li>
+              
+                <li>resealable lidding film — 0 clicks, 598 impressions</li>
+              
+                <li>resealable packaging film — 0 clicks, 306 impressions</li>
+              
+                <li>resealable lidding — 0 clicks, 275 impressions</li>
+              
+                <li>resealable film — 0 clicks, 242 impressions</li>
+              
+                <li>re-sealable lidding — 0 clicks, 226 impressions</li>
+              
+                <li>recloseable lidding film — 0 clicks, 202 impressions</li>
+              
+                <li>re-sealable film — 0 clicks, 201 impressions</li>
+              
+                <li>resealable+lidding+film — 0 clicks, 170 impressions</li>
+              
+                <li>peelable lidding — 0 clicks, 59 impressions</li>
+              
+            </ul>
+          </div>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Competing URL</th>
+              <th class="num">Clicks</th>
+              <th class="num">Impr.</th>
+              <th class="num">Pos.</th>
+              <th>Title</th>
+              <th>H1</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td><a href="https://www.belmark.com/blog/sealutions-product-guide/">https://www.belmark.com/blog/sealutions-product-guide/</a></td>
+                <td class="num">0</td>
+                <td class="num">1796</td>
+                <td class="num">10.0</td>
+                <td>Guide to Peelable and Resealable Lidding Films | Belmark</td>
+                <td>Guide to Peelable and Resealable Lidding Films</td>
+              </tr>
+            
+              <tr>
+                <td><a href="https://www.belmark.com/blog/video-guide-to-peelable-and-resealable-lidding-films/">https://www.belmark.com/blog/video-guide-to-peelable-and-resealable-lidding-films/</a></td>
+                <td class="num">0</td>
+                <td class="num">1097</td>
+                <td class="num">14.7</td>
+                <td>[Video] Guide to Peelable and Resealable Lidding Films | Belmark</td>
+                <td>[Video] Guide to Peelable and Resealable Lidding Films</td>
+              </tr>
+            
+          </tbody>
+        </table>
+        <div class="recommendation">
+          <div class="label">Recommendation</div>
+          <p>Add the video to the blog post, 301-redirect the video URL to consolidate search authority. Monitor again 8 weeks after the new peelable/resealable LPs (/packaging) pages) go live.</p>
+        </div>
+      </article>
+    
+      
+      <article class="scenario">
+        <h3>
+          2.
+          
+            <span class="q">&ldquo;labelling in marketing&rdquo;</span>
+          
+        </h3>
+        <p class="meta">
+          0 clicks &middot;
+          199 impressions
+          &middot; best title/H1 similarity 100%
+        </p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Competing URL</th>
+              <th class="num">Clicks</th>
+              <th class="num">Impr.</th>
+              <th class="num">Pos.</th>
+              <th>Title</th>
+              <th>H1</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td><a href="https://www.belmark.com/blog/infographic-the-underrated-role-of-labeling-in-marketing/">https://www.belmark.com/blog/infographic-the-underrated-role-of-labeling-in-marketing/</a></td>
+                <td class="num">0</td>
+                <td class="num">57</td>
+                <td class="num">19.9</td>
+                <td>[INFOGRAPHIC] The Underrated Role of Labeling in Marketing</td>
+                <td>[INFOGRAPHIC] The Underrated Role of Labeling in Marketing</td>
+              </tr>
+            
+              <tr>
+                <td><a href="https://www.belmark.com/blog/labeling-in-marketing/">https://www.belmark.com/blog/labeling-in-marketing/</a></td>
+                <td class="num">0</td>
+                <td class="num">142</td>
+                <td class="num">6.5</td>
+                <td>The Underrated Role of Labeling in Marketing | Belmark Packaging Solutions</td>
+                <td>The Underrated Role of Labeling in Marketing</td>
+              </tr>
+            
+          </tbody>
+        </table>
+        <div class="recommendation">
+          <div class="label">Recommendation</div>
+          <p>Merge the infographic page into the main blog post and 301-redirect the infographic URL to consolidate search equity.</p>
+        </div>
+      </article>
+    
+      
+      <article class="scenario">
+        <h3>
+          3.
+          
+            <span class="q">&ldquo;cpg packaging solutions&rdquo;</span>
+          
+        </h3>
+        <p class="meta">
+          0 clicks &middot;
+          53 impressions
+          &middot; best title/H1 similarity 84%
+        </p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Competing URL</th>
+              <th class="num">Clicks</th>
+              <th class="num">Impr.</th>
+              <th class="num">Pos.</th>
+              <th>Title</th>
+              <th>H1</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td><a href="https://www.belmark.com/blog/packaging-growing-cpg-companies/">https://www.belmark.com/blog/packaging-growing-cpg-companies/</a></td>
+                <td class="num">0</td>
+                <td class="num">28</td>
+                <td class="num">8.8</td>
+                <td>Packaging for CPG Companies | Belmark</td>
+                <td>How Growing CPG Companies Can Future-Proof Their Packaging From Day One</td>
+              </tr>
+            
+              <tr>
+                <td><a href="https://www.belmark.com/startup-cpg/">https://www.belmark.com/startup-cpg/</a></td>
+                <td class="num">0</td>
+                <td class="num">25</td>
+                <td class="num">10.9</td>
+                <td>Packaging Solutions for Startup CPG Brands | Belmark</td>
+                <td>A packaging supplier thatgrows with you.</td>
+              </tr>
+            
+          </tbody>
+        </table>
+        <div class="recommendation">
+          <div class="label">Recommendation</div>
+          <p>Differentiate intent by focusing the blog on educational content about CPG packaging (make it less of a sales pitch) and focus the /startup-cpg/ page on commercial service offerings.</p>
+        </div>
+      </article>
+    
+      
+      <article class="scenario">
+        <h3>
+          4.
+          
+            <span class="q">&ldquo;tru-impact packaging&rdquo;</span>
+          
+        </h3>
+        <p class="meta">
+          0 clicks &middot;
+          40 impressions
+          &middot; best title/H1 similarity 75%
+        </p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Competing URL</th>
+              <th class="num">Clicks</th>
+              <th class="num">Impr.</th>
+              <th class="num">Pos.</th>
+              <th>Title</th>
+              <th>H1</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td><a href="https://www.belmark.com/blog/green-packaging-how-to-walk-the-talk/">https://www.belmark.com/blog/green-packaging-how-to-walk-the-talk/</a></td>
+                <td class="num">0</td>
+                <td class="num">20</td>
+                <td class="num">13.2</td>
+                <td>Green Packaging | Belmark Packaging Solutions</td>
+                <td>Green Packaging: How to Walk the Talk</td>
+              </tr>
+            
+              <tr>
+                <td><a href="https://www.belmark.com/packaging/sustainable-packaging/">https://www.belmark.com/packaging/sustainable-packaging/</a></td>
+                <td class="num">0</td>
+                <td class="num">20</td>
+                <td class="num">6.3</td>
+                <td>Sustainable Packaging Solutions | Eco-Friendly Manufacturer</td>
+                <td>Sustainable Packaging Solutions for Growing Brands</td>
+              </tr>
+            
+          </tbody>
+        </table>
+        <div class="recommendation">
+          <div class="label">Recommendation</div>
+          <p>Focus the commercial &#39;tru-impact&#39; terms on the sustainable packaging page, and link to it from the informational blog post (which should be less tru-impacted focused and more generally informational)</p>
+        </div>
+      </article>
+    
+      
+      <article class="scenario">
+        <h3>
+          5.
+          
+            <span class="q">&ldquo;nutraceutical packaging and folding technology&rdquo;</span>
+          
+        </h3>
+        <p class="meta">
+          0 clicks &middot;
+          178 impressions
+          &middot; best title/H1 similarity 62%
+        </p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Competing URL</th>
+              <th class="num">Clicks</th>
+              <th class="num">Impr.</th>
+              <th class="num">Pos.</th>
+              <th>Title</th>
+              <th>H1</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td><a href="https://www.belmark.com/blog/folding-cartons-for-nutraceuticals/">https://www.belmark.com/blog/folding-cartons-for-nutraceuticals/</a></td>
+                <td class="num">0</td>
+                <td class="num">98</td>
+                <td class="num">1.4</td>
+                <td>Folding Carton Packaging for Nutraceuticals - Getting Started</td>
+                <td>Getting Started With Nutraceutical Packaging: Folding Cartons</td>
+              </tr>
+            
+              <tr>
+                <td><a href="https://www.belmark.com/blog/folding-cartons-for-supplements/">https://www.belmark.com/blog/folding-cartons-for-supplements/</a></td>
+                <td class="num">0</td>
+                <td class="num">80</td>
+                <td class="num">6.8</td>
+                <td>Nutraceutical Packaging Benefits - Belmark, Inc.</td>
+                <td>The Best Nutraceutical Packaging Offers These 5 Benefits</td>
+              </tr>
+            
+          </tbody>
+        </table>
+        <div class="recommendation">
+          <div class="label">Recommendation</div>
+          <p>Consolidate these two highly similar blog posts into one comprehensive guide on nutraceutical folding cartons and redirect the weaker URL.</p>
+        </div>
+      </article>
+    
+
+    <footer class="report-foot">
+      Prepared by Tom Dehnel &middot; SEO Consultant &middot; 29 May 2026
+    </footer>
+  </div>
+</body>
+</html>
