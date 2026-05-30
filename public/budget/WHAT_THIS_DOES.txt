@@ -1,0 +1,77 @@
+============================================================
+WHAT THIS DOES — Household Budget Questionnaire
+============================================================
+
+------------------------------------------------------------
+SECTION 1: PLAIN-LANGUAGE SUMMARY
+------------------------------------------------------------
+
+- This is a private questionnaire that a couple can use to figure out
+  a household budget together.
+
+- Each person fills it out separately on the same computer. You go
+  through a long list of spending categories (housing, food, travel,
+  and so on) and, for each one, you say two numbers:
+    * the LEAST you'd want to spend if money got tight (the "minimum"), and
+    * the amount that feels COMFORTABLE.
+
+- It also asks some "how do you feel about money" questions — things
+  like how much you want to save, how willing you are to cut back, and
+  what matters most to you.
+
+- When both people are done, a "Compare" screen lines up both sets of
+  answers side by side, shows a suggested household budget range, and
+  points out the places where the two of you disagree the most.
+
+- Everything you type stays inside this one web browser, on this one
+  computer. Nothing is sent anywhere, there is no login, and nothing
+  is saved to any website or server. If you clear the browser data,
+  the answers are gone.
+
+- It's meant for PERSONAL household spending only — not business
+  expenses, rental income, or rental-property costs.
+
+
+------------------------------------------------------------
+SECTION 2: TECHNICAL DESCRIPTION
+------------------------------------------------------------
+
+INPUTS
+- Two editable profiles ("Tom" and "Wife" by default), chosen on a
+  welcome screen.
+- For each spending "leaf" category: a monthly Minimum dollar amount, a
+  monthly Comfortable dollar amount, and an optional free-text note.
+- A set of attitude/nuance answers (sliders, radio choices, a category
+  priority ranking, willingness-to-cut ratings, a list of big upcoming
+  expenses, and free-text reflections).
+
+PROCESSING / TRANSFORMATIONS
+- Answers are written to the browser's localStorage on every keystroke
+  (debounced), namespaced under the "budgetApp." key prefix, with a
+  schemaVersion field for future migrations.
+- Per-person summaries sum each group and the whole budget, and show
+  the annualized figure (monthly x 12).
+- Real-time form validation runs on each amount field: amounts cannot
+  be negative (native min="0"), and the Comfortable amount must be at
+  least the Minimum (enforced with the Constraint Validation API).
+- The Compare view computes a household range from both profiles:
+    * Floor   = sum over categories of max(personA.min, personB.min)
+    * Ceiling = sum over categories of max(personA.comfortable, personB.comfortable)
+    * Target  = sum over categories of the blended midpoint of both people
+  It also ranks the largest per-category disagreements and compares the
+  attitude answers (savings rate, risk tolerance, priority order, etc.).
+
+OUTPUTS
+- On-screen questionnaire, per-person summary, and Compare view.
+- A print / "Save as PDF" view (via the browser print dialog and a
+  dedicated print stylesheet). No files are written to disk by the app
+  itself; only the browser's own localStorage is used.
+
+DEPENDENCIES
+- NONE. This is a pure static app: plain HTML, CSS, and vanilla
+  JavaScript with no framework, no build step of its own, no npm
+  packages, no external CDN, and no network calls. For that reason
+  there is intentionally no package.json / requirements.txt in this
+  folder — there is nothing to install. It is deployed simply by being
+  copied into the parent Astro site's build output (public/ -> dist/)
+  and served at tomdehnel.com/budget/.
