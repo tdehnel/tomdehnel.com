@@ -6,12 +6,11 @@ WHAT THIS DOES — Household Budget Questionnaire
 SECTION 1: PLAIN-LANGUAGE SUMMARY
 ------------------------------------------------------------
 
-- This is a private questionnaire that a couple can use to figure out
-  a household budget together.
+- This is a private questionnaire that helps one person map out a
+  household budget for themselves.
 
-- Each person fills it out separately on the same computer. You go
-  through a long list of spending categories (housing, food, travel,
-  and so on) and, for each one, you say two numbers:
+- You go through a long list of spending categories (housing, food,
+  travel, and so on) and, for each one, you say two numbers:
     * the LEAST you'd want to spend if money got tight (the "minimum"), and
     * the amount that feels COMFORTABLE.
 
@@ -19,9 +18,10 @@ SECTION 1: PLAIN-LANGUAGE SUMMARY
   like how much you want to save, how willing you are to cut back, and
   what matters most to you.
 
-- When both people are done, a "Compare" screen lines up both sets of
-  answers side by side, shows a suggested household budget range, and
-  points out the places where the two of you disagree the most.
+- When you're done, you can save your answers to a file ("Export for
+  Claude"). You can hand that file to Claude and ask for an analysis.
+  If a second person fills out their own copy and exports it too, you
+  can give Claude both files and ask it to compare the two.
 
 - Everything you type stays inside this one web browser, on this one
   computer. Nothing is sent anywhere, there is no login, and nothing
@@ -37,35 +37,40 @@ SECTION 2: TECHNICAL DESCRIPTION
 ------------------------------------------------------------
 
 INPUTS
-- Two editable profiles ("Tom" and "Wife" by default), chosen on a
-  welcome screen.
+- One budget profile per browser, with an optional name used only to
+  label the export file.
 - For each spending "leaf" category: a monthly Minimum dollar amount, a
   monthly Comfortable dollar amount, and an optional free-text note.
-- A set of attitude/nuance answers (sliders, radio choices, a category
-  priority ranking, willingness-to-cut ratings, a list of big upcoming
+- A set of attitude/nuance answers (sliders, radio choices, a
+  willingness-to-cut rating per category, a list of big upcoming
   expenses, and free-text reflections).
 
 PROCESSING / TRANSFORMATIONS
 - Answers are written to the browser's localStorage on every keystroke
-  (debounced), namespaced under the "budgetApp." key prefix, with a
-  schemaVersion field for future migrations.
-- Per-person summaries sum each group and the whole budget, and show
-  the annualized figure (monthly x 12).
+  (debounced), under the single key "budgetApp.profile", with a
+  schemaVersion field for future migrations. (Data from an older
+  two-profile build, if present under "budgetApp.profile.tom/.wife", is
+  adopted once so nothing already entered is lost.)
+- The summary sums each group and the whole budget, and shows the
+  annualized figure (monthly x 12).
 - Real-time form validation runs on each amount field: amounts cannot
   be negative (native min="0"), and the Comfortable amount must be at
   least the Minimum (enforced with the Constraint Validation API).
-- The Compare view computes a household range from both profiles:
-    * Floor   = sum over categories of max(personA.min, personB.min)
-    * Ceiling = sum over categories of max(personA.comfortable, personB.comfortable)
-    * Target  = sum over categories of the blended midpoint of both people
-  It also ranks the largest per-category disagreements and compares the
-  attitude answers (savings rate, risk tolerance, priority order, etc.).
+- "Export for Claude" generates a single self-describing Markdown
+  document: a short instruction header for Claude, then the person's
+  totals, a per-category table, the answered line items (with notes),
+  and their attitude answers. The header also tells Claude that if a
+  second person's budget is supplied in the same conversation, it
+  should compare the two.
 
 OUTPUTS
-- On-screen questionnaire, per-person summary, and Compare view.
+- On-screen questionnaire and per-person summary.
+- A downloaded Markdown file (household-budget-[name-]YYYY-MM-DD.md)
+  intended to be uploaded to Claude for analysis.
 - A print / "Save as PDF" view (via the browser print dialog and a
-  dedicated print stylesheet). No files are written to disk by the app
-  itself; only the browser's own localStorage is used.
+  dedicated print stylesheet). Apart from the export download and
+  printing, no files are written to disk by the app itself; only the
+  browser's own localStorage is used.
 
 DEPENDENCIES
 - NONE. This is a pure static app: plain HTML, CSS, and vanilla

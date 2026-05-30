@@ -49,7 +49,6 @@ window.BUDGET_QUESTIONS = {
         { id: "internet", label: "Internet" },
         { id: "mobile", label: "Mobile phones" },
         { id: "landline", label: "Landline / VoIP" },
-        { id: "tv_service", label: "TV service (cable / streaming-TV bundle)" },
       ],
     },
     {
@@ -63,7 +62,6 @@ window.BUDGET_QUESTIONS = {
         { id: "coffee", label: "Coffee shops / cafes" },
         { id: "alcohol", label: "Alcohol (store-bought) / bar" },
         { id: "work_lunches", label: "Work lunches / vending / snacks" },
-        { id: "meal_kits", label: "Meal kits / grocery delivery fees" },
       ],
     },
     {
@@ -258,13 +256,6 @@ window.BUDGET_QUESTIONS = {
   // type: "slider" | "radio" | "ranking" | "cut_ratings" | "upcoming" | "reflections"
   attitudes: [
     {
-      id: "savings_rate_target",
-      type: "slider",
-      label: "Target monthly savings rate",
-      help: "Roughly what share of your take-home pay do you want to save each month?",
-      min: 0, max: 60, step: 1, unit: "%",
-    },
-    {
       id: "save_vs_spend",
       type: "slider",
       label: "Save vs. spend disposition",
@@ -314,12 +305,6 @@ window.BUDGET_QUESTIONS = {
         { value: "somewhat_uncertain", label: "Somewhat uncertain" },
         { value: "uncertain", label: "Uncertain" },
       ],
-    },
-    {
-      id: "priority_ranking",
-      type: "ranking",
-      label: "Category priorities",
-      help: "Drag to order the spending groups from most-protected (top) to first-to-cut (bottom) if money got tight.",
     },
     {
       id: "willingness_to_cut",

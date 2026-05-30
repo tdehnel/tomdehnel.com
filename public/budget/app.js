@@ -7,7 +7,6 @@
   var Q = window.BUDGET_QUESTIONS;
   var SCHEMA_VERSION = 1;
   var NS = 'budgetApp.';
-  var INDEX_KEY = NS + 'index';
   var ATT_STEP = '__attitudes__';
 
   /* =================================================================
@@ -23,24 +22,15 @@
   }
   function nowISO() { return new Date().toISOString(); }
 
-  function defaultIndex() {
-    return {
-      schemaVersion: SCHEMA_VERSION,
-      profiles: [{ id: 'tom', name: 'Tom' }, { id: 'wife', name: 'Wife' }],
-      activeProfileId: 'tom'
-    };
-  }
-  function loadIndex() {
-    var idx = readJSON(INDEX_KEY, null);
-    if (!idx || !idx.profiles) { idx = defaultIndex(); writeJSON(INDEX_KEY, idx); }
-    return idx;
-  }
-  function saveIndex(idx) { writeJSON(INDEX_KEY, idx); }
+  // Single-person tool: one profile, stored under one key. (Older builds kept
+  // multiple profiles under "<NS>profile.<id>"; if such data exists we adopt it
+  // once so nothing the user already entered is lost.)
+  var PROFILE_KEY = NS + 'profile';
+  var LEGACY_KEYS = [NS + 'profile.tom', NS + 'profile.wife'];
 
-  function profileKey(id) { return NS + 'profile.' + id; }
-  function newProfile(id, name) {
+  function newProfile(name) {
     return {
-      schemaVersion: SCHEMA_VERSION, profileId: id, displayName: name || id,
+      schemaVersion: SCHEMA_VERSION, displayName: name || '',
       createdAt: nowISO(), updatedAt: nowISO(), currency: 'USD',
       answers: {}, attitudes: {}, progress: {}
     };
@@ -48,21 +38,23 @@
   function migrate(p) {
     // Forward-compatible: bump and transform here when SCHEMA_VERSION changes.
     if (!p.schemaVersion) p.schemaVersion = 1;
+    if (typeof p.displayName !== 'string') p.displayName = '';
     if (!p.answers) p.answers = {};
     if (!p.attitudes) p.attitudes = {};
     if (!p.progress) p.progress = {};
     return p;
   }
-  function loadProfile(id) {
-    var p = readJSON(profileKey(id), null);
+  function loadProfile() {
+    var p = readJSON(PROFILE_KEY, null);
     if (!p) {
-      var meta = loadIndex().profiles.filter(function (x) { return x.id === id; })[0];
-      p = newProfile(id, meta ? meta.name : id);
+      // One-time adoption of pre-refactor data (first non-empty legacy profile).
+      for (var i = 0; i < LEGACY_KEYS.length && !p; i++) p = readJSON(LEGACY_KEYS[i], null);
     }
+    if (!p) p = newProfile('');
     return migrate(p);
   }
-  function saveProfile(p) { p.updatedAt = nowISO(); writeJSON(profileKey(p.profileId), p); }
-  function clearProfile(id) { localStorage.removeItem(profileKey(id)); }
+  function saveProfile(p) { p.updatedAt = nowISO(); writeJSON(PROFILE_KEY, p); }
+  function clearProfile() { localStorage.removeItem(PROFILE_KEY); }
   function clearAll() {
     var keys = [];
     for (var i = 0; i < localStorage.length; i++) {
@@ -120,7 +112,7 @@
     return Object.keys(p.attitudes || {}).some(function (k) {
       var v = p.attitudes[k];
       if (v == null) return false;
-      if (Array.isArray(v)) return v.length > 0 && !(k === 'priority_ranking');
+      if (Array.isArray(v)) return v.length > 0;
       if (typeof v === 'object') return Object.keys(v).length > 0;
       return true;
     });
@@ -139,13 +131,10 @@
   function parseHash() {
     var h = location.hash.replace(/^#/, '');
     if (!h || h === '/') return { view: 'welcome' };
-    var parts = h.split('?');
-    var path = parts[0], query = {};
-    if (parts[1]) parts[1].split('&').forEach(function (kv) { var p = kv.split('='); query[decodeURIComponent(p[0])] = decodeURIComponent(p[1] || ''); });
+    var path = h.split('?')[0];
     var seg = path.split('/').filter(Boolean);
     if (seg[0] === 'q') return { view: 'questionnaire', step: seg[1] || Q.groups[0].id };
-    if (seg[0] === 'summary') return { view: 'summary', profile: query.p };
-    if (seg[0] === 'compare') return { view: 'compare' };
+    if (seg[0] === 'summary') return { view: 'summary' };
     return { view: 'welcome' };
   }
   function go(hash) { location.hash = hash; }
@@ -175,7 +164,7 @@
    * View switching
    * ================================================================= */
   function showView(name) {
-    ['welcome', 'questionnaire', 'summary', 'compare'].forEach(function (v) {
+    ['welcome', 'questionnaire', 'summary'].forEach(function (v) {
       document.getElementById('view-' + v).hidden = (v !== name);
     });
     var main = document.getElementById('main');
@@ -193,71 +182,43 @@
    * ================================================================= */
   function renderWelcome() {
     setEditingBadge(null);
-    var idx = loadIndex();
     document.getElementById('welcome-intro').textContent = Q.intro;
 
-    var wrap = document.getElementById('profile-cards');
-    wrap.innerHTML = '';
-    idx.profiles.forEach(function (meta) {
-      var p = loadProfile(meta.id);
-      var pct = percentComplete(p);
-      var answered = answeredLeafCount(p);
-      var statusText = answered === 0 ? 'Not started'
-        : (pct >= 100 ? 'Complete' : pct + '% complete');
-      var card = document.createElement('div');
-      card.className = 'profile-card';
-      card.innerHTML =
-        '<div class="pc-name">' +
-          '<h3 data-name>' + esc(meta.name) + '</h3>' +
-          '<button class="pc-edit-name" type="button" title="Rename" aria-label="Rename ' + esc(meta.name) + '">✎</button>' +
-        '</div>' +
-        '<div class="pc-status">' + statusText + (p.updatedAt && answered ? ' · saved ' + esc(fmtTime(p.updatedAt)) : '') + '</div>' +
-        '<div class="pc-bar"><span style="width:' + pct + '%"></span></div>' +
-        '<div class="pc-actions">' +
-          '<button class="btn btn-primary btn-sm" data-act="edit">' + (answered ? 'Continue' : 'Start') + '</button>' +
-          '<button class="btn btn-ghost btn-sm" data-act="summary"' + (answered ? '' : ' disabled') + '>Summary</button>' +
-          '<button class="btn btn-danger-ghost btn-sm" data-act="clear"' + (answered || attitudeAnswered(p) ? '' : ' disabled') + '>Clear</button>' +
-        '</div>';
+    var p = loadProfile();
+    var answered = answeredLeafCount(p);
+    var hasData = profileHasData(p);
+    var pct = percentComplete(p);
 
-      card.querySelector('[data-act="edit"]').addEventListener('click', function () {
-        idx.activeProfileId = meta.id; saveIndex(idx);
-        go('#/q/' + Q.groups[0].id);
-      });
-      card.querySelector('[data-act="summary"]').addEventListener('click', function () { go('#/summary?p=' + meta.id); });
-      card.querySelector('[data-act="clear"]').addEventListener('click', function () {
-        if (window.confirm('Clear all of ' + meta.name + "'s answers? This can't be undone.")) {
-          clearProfile(meta.id); renderWelcome();
-        }
-      });
-      card.querySelector('.pc-edit-name').addEventListener('click', function () { startRename(card, idx, meta); });
+    // Optional name — saved as you type, used only to label the export.
+    var nameInput = document.getElementById('welcome-name-input');
+    nameInput.value = p.displayName || '';
+    nameInput.oninput = function () {
+      var fresh = loadProfile();
+      fresh.displayName = nameInput.value.trim();
+      saveProfile(fresh);
+    };
 
-      wrap.appendChild(card);
-    });
+    var status = document.getElementById('welcome-status');
+    if (answered === 0) status.textContent = 'You haven’t started yet.';
+    else status.textContent = (pct >= 100 ? 'All done' : pct + '% complete') +
+      ' · ' + answered + ' item' + (answered === 1 ? '' : 's') + ' entered' +
+      (p.updatedAt ? ' · saved ' + fmtTime(p.updatedAt) : '');
 
-    // Compare enabled when both profiles have at least one answer.
-    var bothReady = idx.profiles.length >= 2 && idx.profiles.every(function (m) { return answeredLeafCount(loadProfile(m.id)) > 0; });
-    var cmp = document.getElementById('btn-compare');
-    cmp.disabled = !bothReady;
-    cmp.title = bothReady ? '' : 'Both people need at least some answers first.';
+    var start = document.getElementById('btn-start');
+    start.textContent = answered ? 'Continue →' : 'Start →';
+    start.onclick = function () { go('#/q/' + Q.groups[0].id); };
+
+    var sum = document.getElementById('btn-summary');
+    sum.disabled = !hasData;
+    sum.onclick = function () { go('#/summary'); };
+
+    var exp = document.getElementById('btn-export');
+    exp.disabled = !hasData;
+    exp.title = hasData ? '' : 'Enter some answers first.';
+    document.getElementById('export-hint').hidden = !hasData;
+    exp.onclick = exportForClaude;
 
     showView('welcome');
-  }
-
-  function startRename(card, idx, meta) {
-    var nameWrap = card.querySelector('.pc-name');
-    var current = meta.name;
-    nameWrap.innerHTML = '<input type="text" value="' + esc(current) + '" maxlength="24" aria-label="Profile name">' +
-      '<button class="btn btn-sm" type="button">Save</button>';
-    var input = nameWrap.querySelector('input');
-    input.focus(); input.select();
-    function commit() {
-      var v = input.value.trim() || current;
-      meta.name = v; saveIndex(idx);
-      var p = loadProfile(meta.id); p.displayName = v; saveProfile(p);
-      renderWelcome();
-    }
-    nameWrap.querySelector('button').addEventListener('click', commit);
-    input.addEventListener('keydown', function (e) { if (e.key === 'Enter') commit(); });
   }
 
   /* =================================================================
@@ -266,10 +227,9 @@
   function stepIds() { return Q.groups.map(function (g) { return g.id; }).concat([ATT_STEP]); }
 
   function renderQuestionnaire(stepId) {
-    var idx = loadIndex();
-    currentProfile = loadProfile(idx.activeProfileId);
+    currentProfile = loadProfile();
     touched = {};
-    setEditingBadge(currentProfile.displayName);
+    setEditingBadge(currentProfile.displayName || null);
 
     var ids = stepIds();
     if (ids.indexOf(stepId) === -1) stepId = ids[0];
@@ -290,10 +250,10 @@
     back.onclick = function () { pos === 0 ? go('#/welcome') : go('#/q/' + ids[pos - 1]); };
     next.textContent = (pos === ids.length - 1) ? 'Finish → Summary' : 'Next →';
     next.onclick = function () {
-      if (pos === ids.length - 1) go('#/summary?p=' + currentProfile.profileId);
+      if (pos === ids.length - 1) go('#/summary');
       else go('#/q/' + ids[pos + 1]);
     };
-    document.getElementById('q-to-summary').onclick = function () { go('#/summary?p=' + currentProfile.profileId); };
+    document.getElementById('q-to-summary').onclick = function () { go('#/summary'); };
 
     showView('questionnaire');
   }
@@ -452,7 +412,6 @@
     switch (att.type) {
       case 'slider': return buildSlider(att, A);
       case 'radio': return buildRadio(att, A);
-      case 'ranking': return buildRanking(att, A);
       case 'cut_ratings': return buildCutRatings(att, A);
       case 'upcoming': return buildUpcoming(att, A);
       case 'reflections': return buildReflections(att, A);
@@ -463,7 +422,7 @@
   function buildSlider(att, A) {
     var wrap = document.createElement('div'); wrap.className = 'slider-row';
     var stored = A[att.id];
-    var def = att.id === 'savings_rate_target' ? 15 : Math.round((att.min + att.max) / 2);
+    var def = Math.round((att.min + att.max) / 2);
     var range = document.createElement('input');
     range.type = 'range'; range.min = att.min; range.max = att.max; range.step = att.step;
     range.value = stored != null ? stored : def;
@@ -488,57 +447,6 @@
       lbl.appendChild(r); lbl.appendChild(document.createTextNode(' ' + opt.label));
       wrap.appendChild(lbl);
     });
-    return wrap;
-  }
-
-  function buildRanking(att, A) {
-    var wrap = document.createElement('div');
-    var order = (A[att.id] && A[att.id].length) ? A[att.id].slice() : Q.groups.map(function (g) { return g.id; });
-    // keep in sync with current group set
-    order = order.filter(function (id) { return groupById(id); });
-    Q.groups.forEach(function (g) { if (order.indexOf(g.id) === -1) order.push(g.id); });
-    A[att.id] = order;
-
-    function render() {
-      wrap.innerHTML = '';
-      var ul = document.createElement('ul'); ul.className = 'rank-list';
-      order.forEach(function (gid, i) {
-        var g = groupById(gid);
-        var li = document.createElement('li'); li.className = 'rank-item'; li.draggable = true; li.dataset.gid = gid;
-        li.innerHTML = '<span class="rank-num">' + (i + 1) + '</span><span class="rank-grip" aria-hidden="true">☰</span>' +
-          '<span class="rank-name">' + esc(g.title) + '</span>' +
-          '<span class="rank-move">' +
-            '<button class="btn btn-sm" type="button" data-dir="-1" aria-label="Move up"' + (i === 0 ? ' disabled' : '') + '>↑</button>' +
-            '<button class="btn btn-sm" type="button" data-dir="1" aria-label="Move down"' + (i === order.length - 1 ? ' disabled' : '') + '>↓</button>' +
-          '</span>';
-        li.querySelectorAll('button').forEach(function (b) {
-          b.addEventListener('click', function () { move(i, Number(b.dataset.dir)); });
-        });
-        addDrag(li);
-        ul.appendChild(li);
-      });
-      wrap.appendChild(ul);
-    }
-    function move(i, dir) {
-      var j = i + dir; if (j < 0 || j >= order.length) return;
-      var tmp = order[i]; order[i] = order[j]; order[j] = tmp;
-      A[att.id] = order.slice(); scheduleSave(); markAttNav(); render();
-    }
-    var dragFrom = null;
-    function addDrag(li) {
-      li.addEventListener('dragstart', function () { dragFrom = order.indexOf(li.dataset.gid); li.classList.add('dragging'); });
-      li.addEventListener('dragend', function () { li.classList.remove('dragging'); });
-      li.addEventListener('dragover', function (e) { e.preventDefault(); });
-      li.addEventListener('drop', function (e) {
-        e.preventDefault();
-        var to = order.indexOf(li.dataset.gid);
-        if (dragFrom == null || to < 0 || dragFrom === to) return;
-        var moved = order.splice(dragFrom, 1)[0];
-        order.splice(to, 0, moved);
-        A[att.id] = order.slice(); scheduleSave(); markAttNav(); render();
-      });
-    }
-    render();
     return wrap;
   }
 
@@ -610,6 +518,143 @@
   function markAttNav() { updateNavDot(ATT_STEP); }
 
   /* =================================================================
+   * EXPORT (Markdown, self-describing, for handing to Claude)
+   * ================================================================= */
+  function profileHasData(p) {
+    return answeredLeafCount(p) > 0 || attitudeAnswered(p);
+  }
+
+  // One attitude rendered as Markdown lines (driven by questions.js definitions).
+  function attitudeLinesMd(p) {
+    var A = p.attitudes || {};
+    var lines = [];
+    Q.attitudes.forEach(function (att) {
+      var v = A[att.id];
+      if (att.type === 'slider') {
+        if (v != null) lines.push('- ' + att.label + ': ' + v + (att.unit || ''));
+      } else if (att.type === 'radio') {
+        if (v) lines.push('- ' + att.label + ': ' + optLabel(att.id, v));
+      } else if (att.type === 'cut_ratings') {
+        if (v && Object.keys(v).length) {
+          var parts = Q.groups
+            .filter(function (g) { return v[g.id] != null; })
+            .map(function (g) { return g.title + ' ' + v[g.id]; });
+          if (parts.length) lines.push('- ' + att.label + ' (1 = never cut, 5 = cut first): ' + parts.join('; '));
+        }
+      } else if (att.type === 'upcoming') {
+        var rows = (v || []).filter(function (r) { return r && (r.label || r.amount != null); });
+        if (rows.length) {
+          lines.push('- ' + att.label + ':');
+          rows.forEach(function (r) {
+            lines.push('  - ' + (r.label || 'Unnamed') +
+              (r.amount != null ? ' — ' + fmtMoney(num(r.amount)) : '') +
+              (r.when ? ' (' + r.when + ')' : ''));
+          });
+        }
+      } else if (att.type === 'reflections') {
+        var R = v || {};
+        (att.prompts || []).forEach(function (pr) {
+          if (R[pr.id]) lines.push('- ' + pr.label + ': ' + R[pr.id]);
+        });
+      }
+    });
+    return lines;
+  }
+
+  // Full Markdown for a single profile.
+  function profileMarkdown(p, name) {
+    var tot = profileTotals(p);
+    var pct = percentComplete(p);
+    var out = [];
+    out.push('## ' + name + '  (' + pct + '% of items filled in)');
+    out.push('');
+    out.push('- **Minimum:** ' + fmtMoney(tot.min) + '/mo (' + fmtMoney(tot.min * 12) + '/yr)');
+    out.push('- **Comfortable:** ' + fmtMoney(tot.comf) + '/mo (' + fmtMoney(tot.comf * 12) + '/yr)');
+    out.push('- **Spread (comfortable − minimum):** ' + fmtMoney(tot.comf - tot.min) + '/mo');
+    out.push('');
+
+    // Category totals table
+    out.push('### Category totals');
+    out.push('');
+    out.push('| Category | Min/mo | Comfortable/mo | % of comfortable |');
+    out.push('| --- | ---: | ---: | ---: |');
+    Q.groups.forEach(function (g) {
+      var t = groupTotals(p, g);
+      if (t.min === 0 && t.comf === 0) return; // skip untouched groups
+      var share = tot.comf ? Math.round((t.comf / tot.comf) * 100) : 0;
+      out.push('| ' + g.title + ' | ' + fmtMoney(t.min) + ' | ' + fmtMoney(t.comf) + ' | ' + share + '% |');
+    });
+    out.push('| **Total** | **' + fmtMoney(tot.min) + '** | **' + fmtMoney(tot.comf) + '** | **100%** |');
+    out.push('');
+
+    // Line-item detail (answered leaves only)
+    out.push('### Detail by item');
+    out.push('');
+    Q.groups.forEach(function (g) {
+      var answered = g.leaves.filter(function (l) { return leafAnswered(p, g.id + '.' + l.id); });
+      if (!answered.length) return;
+      out.push('#### ' + g.title);
+      answered.forEach(function (l) {
+        var a = p.answers[g.id + '.' + l.id] || {};
+        out.push('- ' + l.label + ': min ' + fmtMoney(num(a.min)) + ' · comfortable ' + fmtMoney(num(a.comfortable)));
+        if (a.notes && String(a.notes).trim()) out.push('  - note: ' + String(a.notes).trim());
+      });
+      out.push('');
+    });
+
+    // Attitudes
+    var att = attitudeLinesMd(p);
+    if (att.length) {
+      out.push('### Attitudes & priorities');
+      out.push('');
+      out.push.apply(out, att);
+      out.push('');
+    }
+    return out.join('\n');
+  }
+
+  function buildExportMarkdown() {
+    var p = loadProfile();
+    var name = (p.displayName || '').trim();
+
+    var head = [];
+    head.push('# Household Budget — Export for Analysis');
+    head.push('_Generated ' + new Date().toLocaleString() + '_');
+    head.push('');
+    head.push('> **Instructions for Claude:** Below is a household budget worksheet' + (name ? ' filled out by ' + name : '') + '. ' +
+      'For every spending item the person gave a **Minimum** (the least they\'d want to spend if money got tight) and a **Comfortable** amount (what feels good). ' +
+      'All amounts are monthly and in US dollars. Please analyse the budget: summarise where the money goes, flag the biggest categories and the biggest gaps between minimum and comfortable, ' +
+      'call out anything that looks unusually high or low, and suggest a realistic monthly target. ' +
+      'If a second person\'s budget is also provided in this conversation, compare the two — where they align, where they differ most, and where they could meet in the middle on a shared monthly target.');
+    head.push('>');
+    head.push('> This is a personal/household budget only — it deliberately excludes business expenses and rental-property income or costs.');
+    head.push('');
+
+    var body = profileHasData(p)
+      ? profileMarkdown(p, name || 'Your budget')
+      : '_No answers have been entered yet._';
+    return head.join('\n') + '\n' + body + '\n';
+  }
+
+  function downloadText(filename, text, mime) {
+    var blob = new Blob([text], { type: (mime || 'text/plain') + ';charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+  }
+
+  function exportForClaude() {
+    var p = loadProfile();
+    var md = buildExportMarkdown();
+    var stamp = new Date().toISOString().slice(0, 10);
+    var slug = (p.displayName || '').trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    downloadText('household-budget-' + (slug ? slug + '-' : '') + stamp + '.md', md, 'text/markdown');
+  }
+
+  /* =================================================================
    * SUMMARY
    * ================================================================= */
   function attDef(id) { return Q.attitudes.filter(function (a) { return a.id === id; })[0]; }
@@ -619,14 +664,12 @@
     return o ? o.label : (value || '—');
   }
 
-  function renderSummary(profileId) {
-    var idx = loadIndex();
-    if (!profileId) profileId = idx.activeProfileId;
-    var p = loadProfile(profileId);
-    var meta = idx.profiles.filter(function (m) { return m.id === profileId; })[0] || { name: p.displayName };
+  function renderSummary() {
+    var p = loadProfile();
+    var name = (p.displayName || '').trim();
     var tot = profileTotals(p);
 
-    var html = '<h1>' + esc(meta.name) + ' — budget summary</h1>';
+    var html = '<h1>' + (name ? esc(name) + ' — budget summary' : 'Your budget summary') + '</h1>';
     html += '<div class="stat-cards">' +
       statCard('Minimum / month', fmtMoney(tot.min), fmtMoney(tot.min * 12) + ' / year') +
       statCard('Comfortable / month', fmtMoney(tot.comf), fmtMoney(tot.comf * 12) + ' / year') +
@@ -648,8 +691,8 @@
     document.getElementById('summary-area').innerHTML = html;
 
     document.getElementById('summary-back').onclick = function () { go('#/welcome'); };
-    document.getElementById('summary-edit').onclick = function () { idx.activeProfileId = profileId; saveIndex(idx); go('#/q/' + Q.groups[0].id); };
-    document.getElementById('summary-compare').onclick = function () { go('#/compare'); };
+    document.getElementById('summary-edit').onclick = function () { go('#/q/' + Q.groups[0].id); };
+    document.getElementById('summary-export').onclick = exportForClaude;
     document.getElementById('summary-print').onclick = function () { window.print(); };
 
     setEditingBadge(null);
@@ -664,7 +707,6 @@
     var A = p.attitudes || {};
     var rows = [];
     function row(k, v) { rows.push('<tr><td>' + esc(k) + '</td><td>' + v + '</td></tr>'); }
-    row('Target savings rate', A.savings_rate_target != null ? A.savings_rate_target + '%' : '—');
     row('Save vs. spend (1–10)', A.save_vs_spend != null ? A.save_vs_spend : '—');
     row('Risk tolerance', A.risk_tolerance ? esc(optLabel('risk_tolerance', A.risk_tolerance)) : '—');
     row('Emergency fund target', A.emergency_months != null ? A.emergency_months + ' months' : '—');
@@ -673,10 +715,6 @@
     row('Income stability', A.income_stability ? esc(optLabel('income_stability', A.income_stability)) : '—');
     var html = '<table class="tbl"><tbody>' + rows.join('') + '</tbody></table>';
 
-    if (A.priority_ranking && A.priority_ranking.length) {
-      var top = A.priority_ranking.slice(0, 3).map(function (id) { var g = groupById(id); return g ? esc(g.title) : id; });
-      html += '<p><strong>Top priorities to protect:</strong> ' + top.join(' · ') + '</p>';
-    }
     if (A.upcoming_expenses && A.upcoming_expenses.length) {
       html += '<p><strong>Upcoming expenses:</strong></p><ul>';
       A.upcoming_expenses.forEach(function (r) {
@@ -696,201 +734,19 @@
   }
 
   /* =================================================================
-   * COMPARE
-   * ================================================================= */
-  function renderCompare() {
-    var idx = loadIndex();
-    if (idx.profiles.length < 2) { document.getElementById('compare-area').innerHTML = '<p class="empty-note">Need two profiles to compare.</p>'; showView('compare'); return; }
-    var a = loadProfile(idx.profiles[0].id), b = loadProfile(idx.profiles[1].id);
-    var an = idx.profiles[0].name, bn = idx.profiles[1].name;
-
-    // household range
-    var floor = 0, ceiling = 0, target = 0;
-    var leaves = allLeaves();
-    var detail = []; // {group, label, aMin, aComf, bMin, bComf}
-    leaves.forEach(function (x) {
-      var aa = a.answers[x.key] || {}, bb = b.answers[x.key] || {};
-      var aMin = num(aa.min), aComf = num(aa.comfortable), bMin = num(bb.min), bComf = num(bb.comfortable);
-      floor += Math.max(aMin, bMin);
-      ceiling += Math.max(aComf, bComf);
-      target += (((aMin + aComf) / 2) + ((bMin + bComf) / 2)) / 2;
-      detail.push({ group: x.group, leaf: x.leaf, key: x.key, aMin: aMin, aComf: aComf, bMin: bMin, bComf: bComf });
-    });
-    var ta = profileTotals(a), tb = profileTotals(b);
-
-    var html = '<h1>Compare — ' + esc(an) + ' &amp; ' + esc(bn) + '</h1>';
-
-    html += '<h2>Suggested household range (monthly)</h2>';
-    html += '<div class="range-cards">' +
-      rangeCard('floor', 'Floor', floor) +
-      rangeCard('target', 'Target', target) +
-      rangeCard('ceiling', 'Ceiling', ceiling) +
-    '</div>';
-    html += '<p class="muted small">Floor = the higher of each person’s minimum in every category (so neither of you is below your own floor). ' +
-      'Ceiling = the higher comfortable amount. Target = a blended midpoint to budget toward. ' +
-      'For reference: ' + esc(an) + '’s comfortable total is ' + fmtMoney(ta.comf) + '/mo and ' + esc(bn) + '’s is ' + fmtMoney(tb.comf) + '/mo.</p>';
-
-    // per-person totals
-    html += '<h2>Per-person totals</h2><table class="tbl"><thead><tr><th></th><th>' + esc(an) + '</th><th>' + esc(bn) + '</th></tr></thead><tbody>' +
-      '<tr><td>Minimum / month</td><td>' + fmtMoney(ta.min) + '</td><td>' + fmtMoney(tb.min) + '</td></tr>' +
-      '<tr><td>Comfortable / month</td><td>' + fmtMoney(ta.comf) + '</td><td>' + fmtMoney(tb.comf) + '</td></tr>' +
-      '<tr><td>Minimum / year</td><td>' + fmtMoney(ta.min * 12) + '</td><td>' + fmtMoney(tb.min * 12) + '</td></tr>' +
-      '<tr><td>Comfortable / year</td><td>' + fmtMoney(ta.comf * 12) + '</td><td>' + fmtMoney(tb.comf * 12) + '</td></tr>' +
-      '</tbody></table>';
-
-    // biggest disagreements (by comfortable gap)
-    var gaps = detail.map(function (d) { return { label: d.group.title + ' · ' + d.leaf.label, a: d.aComf, b: d.bComf, gap: Math.abs(d.aComf - d.bComf) }; })
-      .filter(function (d) { return d.gap > 0; })
-      .sort(function (x, y) { return y.gap - x.gap; })
-      .slice(0, 10);
-    html += '<h2>Biggest disagreements (comfortable amounts)</h2>';
-    if (!gaps.length) html += '<p class="empty-note">No differences in comfortable amounts yet.</p>';
-    else {
-      html += '<ul class="disagree-list">';
-      gaps.forEach(function (d) {
-        html += '<li><span>' + esc(d.label) + '<br><span class="who">' + esc(an) + ' ' + fmtMoney(d.a) + ' · ' + esc(bn) + ' ' + fmtMoney(d.b) + '</span></span>' +
-          '<span class="amt">' + fmtMoney(d.gap) + ' apart</span></li>';
-      });
-      html += '</ul>';
-    }
-
-    // attitude comparison
-    html += '<h2>Attitudes</h2>' + attitudeCompare(a, b, an, bn);
-
-    // category detail (expandable)
-    html += '<h2>Category detail</h2><p class="muted small no-print">Click a category row to expand. Shaded rows show larger gaps.</p>';
-    html += '<table class="tbl" id="compare-detail"><thead><tr><th>Category</th><th>' + esc(an) + ' min</th><th>' + esc(an) + ' comf</th><th>' + esc(bn) + ' min</th><th>' + esc(bn) + ' comf</th><th>HH floor</th><th>HH ceil</th></tr></thead><tbody>';
-    Q.groups.forEach(function (g) {
-      var rows = detail.filter(function (d) { return d.group.id === g.id; });
-      var gA = groupTotals(a, g), gB = groupTotals(b, g);
-      var gFloor = rows.reduce(function (s, d) { return s + Math.max(d.aMin, d.bMin); }, 0);
-      var gCeil = rows.reduce(function (s, d) { return s + Math.max(d.aComf, d.bComf); }, 0);
-      html += '<tr class="group-row" data-group="' + g.id + '"><td>▸ ' + esc(g.title) + '</td><td>' + fmtMoney(gA.min) + '</td><td>' + fmtMoney(gA.comf) + '</td><td>' + fmtMoney(gB.min) + '</td><td>' + fmtMoney(gB.comf) + '</td><td>' + fmtMoney(gFloor) + '</td><td>' + fmtMoney(gCeil) + '</td></tr>';
-      rows.forEach(function (d) {
-        var gap = Math.abs(d.aComf - d.bComf);
-        var base = Math.max((d.aComf + d.bComf) / 2, 1);
-        var cls = gap === 0 ? 'gap-0' : (gap / base > 0.5 ? 'gap-2' : 'gap-1');
-        html += '<tr class="leaf-row ' + cls + '" data-group="' + g.id + '" style="display:none"><td>' + esc(d.leaf.label) + '</td>' +
-          '<td>' + fmtMoney(d.aMin) + '</td><td>' + fmtMoney(d.aComf) + '</td><td>' + fmtMoney(d.bMin) + '</td><td>' + fmtMoney(d.bComf) + '</td>' +
-          '<td>' + fmtMoney(Math.max(d.aMin, d.bMin)) + '</td><td>' + fmtMoney(Math.max(d.aComf, d.bComf)) + '</td></tr>';
-      });
-    });
-    html += '</tbody><tfoot><tr><td>Household total</td><td>' + fmtMoney(ta.min) + '</td><td>' + fmtMoney(ta.comf) + '</td><td>' + fmtMoney(tb.min) + '</td><td>' + fmtMoney(tb.comf) + '</td><td>' + fmtMoney(floor) + '</td><td>' + fmtMoney(ceiling) + '</td></tr></tfoot></table>';
-
-    document.getElementById('compare-area').innerHTML = html;
-
-    // expand/collapse leaves
-    document.querySelectorAll('#compare-detail .group-row').forEach(function (gr) {
-      gr.addEventListener('click', function () {
-        var gid = gr.dataset.group;
-        document.querySelectorAll('#compare-detail .leaf-row[data-group="' + gid + '"]').forEach(function (lr) {
-          lr.style.display = lr.style.display === 'none' ? 'table-row' : 'none';
-        });
-      });
-    });
-
-    document.getElementById('compare-back').onclick = function () { go('#/welcome'); };
-    document.getElementById('compare-print').onclick = function () { window.print(); };
-
-    setEditingBadge(null);
-    showView('compare');
-  }
-
-  function rangeCard(cls, label, value) {
-    return '<div class="range-card ' + cls + '"><div class="label">' + esc(label) + '</div>' +
-      '<div class="value">' + fmtMoney(value) + '</div><div class="sub">' + fmtMoney(value * 12) + ' / year</div></div>';
-  }
-
-  function attitudeCompare(a, b, an, bn) {
-    var A = a.attitudes || {}, B = b.attitudes || {};
-    var out = '<div class="insight-grid">';
-
-    function numRow(label, x, y, unit) {
-      var has = x != null || y != null;
-      var gap = (x != null && y != null) ? Math.abs(x - y) : null;
-      return '<tr><td>' + esc(label) + '</td><td>' + (x != null ? x + unit : '—') + '</td><td>' + (y != null ? y + unit : '—') + '</td><td>' + (gap != null ? gap + unit + ' apart' : (has ? '—' : '')) + '</td></tr>';
-    }
-    out += '<div class="insight-card"><h3>Numbers</h3><table class="tbl"><thead><tr><th></th><th>' + esc(an) + '</th><th>' + esc(bn) + '</th><th>Gap</th></tr></thead><tbody>';
-    out += numRow('Savings rate', A.savings_rate_target, B.savings_rate_target, '%');
-    out += numRow('Save vs. spend', A.save_vs_spend, B.save_vs_spend, '');
-    out += numRow('Emergency months', A.emergency_months, B.emergency_months, '');
-    out += numRow('Lifestyle importance', A.lifestyle_importance, B.lifestyle_importance, '');
-    out += numRow('Debt aggressiveness', A.debt_aggressiveness, B.debt_aggressiveness, '');
-    out += '</tbody></table>';
-    function cmpChoice(label, id) {
-      var xa = A[id], xb = B[id];
-      var same = xa && xb && xa === xb;
-      var cls = (xa && xb) ? (same ? 'agree' : 'mismatch') : '';
-      return '<p>' + esc(label) + ': <strong>' + esc(xa ? optLabel(id, xa) : '—') + '</strong> vs <strong>' + esc(xb ? optLabel(id, xb) : '—') + '</strong> ' +
-        (xa && xb ? '<span class="' + cls + '">' + (same ? '(agree)' : '(differ)') + '</span>' : '') + '</p>';
-    }
-    out += cmpChoice('Risk tolerance', 'risk_tolerance');
-    out += cmpChoice('Income stability', 'income_stability');
-    out += '</div>';
-
-    // priority divergence
-    out += '<div class="insight-card"><h3>Priority alignment</h3>';
-    if (A.priority_ranking && A.priority_ranking.length && B.priority_ranking && B.priority_ranking.length) {
-      var posA = {}, posB = {};
-      A.priority_ranking.forEach(function (id, i) { posA[id] = i + 1; });
-      B.priority_ranking.forEach(function (id, i) { posB[id] = i + 1; });
-      var div = Q.groups.map(function (g) { return { title: g.title, a: posA[g.id], b: posB[g.id], d: Math.abs((posA[g.id] || 0) - (posB[g.id] || 0)) }; })
-        .sort(function (x, y) { return y.d - x.d; }).slice(0, 5).filter(function (x) { return x.d > 0; });
-      if (!div.length) out += '<p class="agree">Your priority orders match closely.</p>';
-      else {
-        out += '<p class="muted small">Biggest differences in where you rank things:</p><ul>';
-        div.forEach(function (x) { out += '<li>' + esc(x.title) + ': ' + esc(an) + ' #' + x.a + ', ' + esc(bn) + ' #' + x.b + '</li>'; });
-        out += '</ul>';
-      }
-    } else out += '<p class="empty-note">Both need to set a priority ranking.</p>';
-    out += '</div>';
-    out += '</div>';
-
-    // merged upcoming
-    var ups = [];
-    (A.upcoming_expenses || []).forEach(function (r) { if (r.label || r.amount != null) ups.push({ who: an, r: r }); });
-    (B.upcoming_expenses || []).forEach(function (r) { if (r.label || r.amount != null) ups.push({ who: bn, r: r }); });
-    ups.sort(function (x, y) { return String(x.r.when || '').localeCompare(String(y.r.when || '')); });
-    if (ups.length) {
-      out += '<h3>Upcoming expenses (combined)</h3><ul>';
-      ups.forEach(function (u) { out += '<li>' + (u.r.when ? esc(u.r.when) + ' — ' : '') + esc(u.r.label || 'Unnamed') + (u.r.amount != null ? ' — ' + fmtMoney(u.r.amount) : '') + ' <span class="who">(' + esc(u.who) + ')</span></li>'; });
-      out += '</ul>';
-    }
-
-    // reflections side by side
-    var rd = attDef('reflections');
-    if (rd) {
-      var any = (A.reflections && Object.keys(A.reflections).length) || (B.reflections && Object.keys(B.reflections).length);
-      if (any) {
-        out += '<h3>Reflections</h3>';
-        rd.prompts.forEach(function (pr) {
-          var xa = (A.reflections || {})[pr.id], xb = (B.reflections || {})[pr.id];
-          if (!xa && !xb) return;
-          out += '<p><strong>' + esc(pr.label) + '</strong><br>' +
-            esc(an) + ': ' + (xa ? esc(xa) : '—') + '<br>' + esc(bn) + ': ' + (xb ? esc(xb) : '—') + '</p>';
-        });
-      }
-    }
-    return out;
-  }
-
-  /* =================================================================
-   * Welcome reset-all + boot
+   * Reset + boot
    * ================================================================= */
   function wireGlobal() {
-    document.getElementById('btn-compare').addEventListener('click', function () { go('#/compare'); });
     document.getElementById('btn-reset-all').addEventListener('click', function () {
-      var t = window.prompt('This permanently deletes ALL budget answers in this browser. Type DELETE to confirm.');
+      var t = window.prompt('This permanently deletes all of your budget answers in this browser. Type DELETE to confirm.');
       if (t === 'DELETE') { clearAll(); location.hash = '#/welcome'; renderWelcome(); }
     });
   }
 
   function route() {
     var r = parseHash();
-    if (r.view === 'welcome') renderWelcome();
-    else if (r.view === 'questionnaire') renderQuestionnaire(r.step);
-    else if (r.view === 'summary') renderSummary(r.profile);
-    else if (r.view === 'compare') renderCompare();
+    if (r.view === 'questionnaire') renderQuestionnaire(r.step);
+    else if (r.view === 'summary') renderSummary();
     else renderWelcome();
   }
 

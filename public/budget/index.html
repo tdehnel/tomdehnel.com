@@ -33,14 +33,23 @@
         server ever sees your answers. Clearing your browser data erases everything.
       </div>
 
-      <h2>Who's filling this out?</h2>
-      <p class="muted">Each of you completes the questionnaire separately on this computer, then use <strong>Compare</strong> to see both side by side.</p>
-      <div id="profile-cards" class="profile-cards"></div>
+      <p class="muted">Fill this out for yourself at your own pace, then export your answers as a file. If someone else fills out their own copy, you can hand both files to Claude later to compare.</p>
+
+      <div class="field welcome-name">
+        <label for="welcome-name-input">Your name (optional)</label>
+        <input type="text" id="welcome-name-input" maxlength="40" placeholder="e.g. Tom" autocomplete="off" />
+        <p class="muted small">Only used to label your export file so you can tell whose answers are whose.</p>
+      </div>
+
+      <p id="welcome-status" class="welcome-status muted"></p>
 
       <div class="welcome-actions">
-        <button id="btn-compare" class="btn btn-primary" type="button" disabled>Compare both →</button>
-        <button id="btn-reset-all" class="btn btn-danger-ghost" type="button">Reset all data…</button>
+        <button id="btn-start" class="btn btn-primary" type="button">Start →</button>
+        <button id="btn-summary" class="btn btn-ghost" type="button" disabled>View summary</button>
+        <button id="btn-export" class="btn btn-ghost" type="button" disabled>Export for Claude…</button>
+        <button id="btn-reset-all" class="btn btn-danger-ghost" type="button">Reset my answers…</button>
       </div>
+      <p class="muted small" id="export-hint" hidden>Downloads a Markdown file with your answers — drag it into Claude and ask for an analysis, or share it to compare with someone else's.</p>
     </section>
 
     <!-- ========================= QUESTIONNAIRE ========================= -->
@@ -78,19 +87,10 @@
       <div class="view-actions no-print">
         <button id="summary-back" class="btn" type="button">← Welcome</button>
         <button id="summary-edit" class="btn btn-ghost" type="button">Edit answers</button>
-        <button id="summary-compare" class="btn btn-ghost" type="button">Compare</button>
+        <button id="summary-export" class="btn btn-ghost" type="button">Export for Claude</button>
         <button id="summary-print" class="btn btn-primary" type="button">Print / Save PDF</button>
       </div>
       <div id="summary-area"></div>
-    </section>
-
-    <!-- ============================ COMPARE ============================ -->
-    <section id="view-compare" class="view" hidden>
-      <div class="view-actions no-print">
-        <button id="compare-back" class="btn" type="button">← Welcome</button>
-        <button id="compare-print" class="btn btn-primary" type="button">Print / Save PDF</button>
-      </div>
-      <div id="compare-area"></div>
     </section>
 
   </main>
